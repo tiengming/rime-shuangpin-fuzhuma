@@ -8,7 +8,7 @@
 # -----------------------------------------------------------------------------
 pro_comment_format:                   # 超级注释，子项配置 true 开启，false 关闭
   fuzhu_code: true                    # 启用辅助码提醒，用于辅助输入练习辅助码，成熟后可关闭
-  candidate_length: 1                 # 候选词辅助码提醒的生效长度，0为关闭（例如 1 表示仅对单字显示辅助码提示）
+  candidate_length: 3                 # 候选词辅助码提醒的生效长度，0为关闭（例如 1 表示仅对单字显示辅助码提示）
   fuzhu_type: moqi                    # 用于匹配对应的辅助码注释显示，可选类型：moqi, flypy, zrm, jdh, cj, tiger, wubi
 
   corrector: true                     # 启用错音错词提醒，例如输入 geiyu 给予 获得 jiyu 提示
@@ -66,7 +66,7 @@ translator:
   enable_completion: false            # 是否显示未输入完整的编码提示
   spelling_hints: 10                  # 编码提示显示长度限制
   comment_format: {comment}           # 原始注释传递给 pro_comment_format.lua 接管
-  enable_user_dict: false             # 是否开启动态字词频自动调频
+  enable_user_dict: true             # 是否开启动态字词频自动调频
   preedit_format:
 
 # -----------------------------------------------------------------------------

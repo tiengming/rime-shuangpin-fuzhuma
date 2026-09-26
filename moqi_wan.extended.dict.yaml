@@ -56,8 +56,8 @@ import_tables:
   - cn_dicts_cell/name
   
   # - cn_dicts/cell # 细胞词库
-  # - cn_dicts_cell/luna_pinyin.poetry    # 细胞词库 古诗文
-  # - cn_dicts_cell/luna_pinyin.place  # 细胞词库 地名
+  - cn_dicts_cell/luna_pinyin.poetry    # 细胞词库 古诗文
+  - cn_dicts_cell/luna_pinyin.place  # 细胞词库 地名
   # - cn_dicts_cell/luna_pinyin.computer
   # - cn_dicts_cell/luna_pinyin.history
 ...
