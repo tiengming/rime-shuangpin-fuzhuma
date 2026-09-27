@@ -1,11 +1,7 @@
 patch:
-  # 1. 让 / 可以作为首码进入 speller
   speller/initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/"
-
-  # 2. 半角标点：追加覆盖 /，只保留斜杠本身
+  punctuator/import_preset: default
   punctuator/punctuator/half_shape/+:
     '/': ['/']
-
-  # 3. 全角标点：同样处理
   punctuator/punctuator/full_shape/+:
     '/': ['／']
