@@ -132,16 +132,16 @@ keyboard:
         - [mode_change, comma, space, earth, enter]
     keys:
       # ── 数字行：点按数字 / 下滑 PC 符号，不重复第一行 ──
-      "1": { tap: "1", swipe_down: "!" }
-      "2": { tap: "2", swipe_down: "@" }
-      "3": { tap: "3", swipe_down: "#" }
-      "4": { tap: "4", swipe_down: "$" }
-      "5": { tap: "5", swipe_down: "%" }
-      "6": { tap: "6", swipe_down: "^" }
-      "7": { tap: "7", swipe_down: "&" }
-      "8": { tap: "8", swipe_down: "*" }
-      "9": { tap: "9", swipe_down: "(" }
-      "0": { tap: "0", swipe_down: ")" }
+      "1": { tap: "1" }
+      "2": { tap: "2" }
+      "3": { tap: "3" }
+      "4": { tap: "4" }
+      "5": { tap: "5" }
+      "6": { tap: "6" }
+      "7": { tap: "7" }
+      "8": { tap: "8" }
+      "9": { tap: "9" }
+      "0": { tap: "0" }
 
       # ── 第一行：上滑常用中文标点 / 成对符号只显示左半 / 下滑双拼提示 ──
       q: { tap: "q", swipe_up: { label: "“", action: commit, value: "“”" }, swipe_down: { label: "iu", action: "none", display: "key" }, long_press: { display: "bubble", values: ["q", "Q"] } }
@@ -156,14 +156,14 @@ keyboard:
       p: { tap: "p", swipe_up: { label: "/", action: send_rime, value: "/" }, swipe_down: { label: "ie", action: "none", display: "key" }, long_press: { display: "bubble", values: ["p", "P"] } }
 
       # ── 第二行：a/s/d 上滑执行英文下滑编辑功能；其余放常用符号 ──
-      a: { tap: "a", swipe_down: { label: "a", action: "none", display: "key" }, long_press: { display: "bubble", values: ["a", "A"] } }
-      s: { tap: "s", swipe_down: { label: "iong\nong", action: "none", display: "key" }, long_press: { display: "bubble", values: ["s", "S"] } }
-      d: { tap: "d", swipe_down: { label: "ai", action: "none", display: "key" }, long_press: { display: "bubble", values: ["d", "D"] } }
+      a: { tap: "a", swipe_up: { label: "！", action: commit, value: "！" }, swipe_down: { label: "a", action: "none", display: "key" }, long_press: { display: "bubble", values: ["a", "A"] } }
+      s: { tap: "s", swipe_up: { label: "@", action: commit, value: "@" }, swipe_down: { label: "iong\nong", action: "none", display: "key" }, long_press: { display: "bubble", values: ["s", "S"] } }
+      d: { tap: "d", swipe_up: { label: "#", action: commit, value: "☛" }, swipe_down: { label: "ai", action: "none", display: "key" }, long_press: { display: "bubble", values: ["d", "D"] } }
       f: { tap: "f", swipe_up: { label: "；", action: commit, value: "；" }, swipe_down: { label: "en", action: "none", display: "key" }, long_press: { display: "bubble", values: ["f", "F"] } }
       g: { tap: "g", swipe_up: { label: "…", action: commit, value: "…" }, swipe_down: { label: "eng", action: "none", display: "key" }, long_press: { display: "bubble", values: ["g", "G"] } }
       h: { tap: "h", swipe_up: { label: "—", action: commit, value: "—" }, swipe_down: { label: "ang", action: "none", display: "key" }, long_press: { display: "bubble", values: ["h", "H"] } }
       j: { tap: "j", swipe_up: { label: "～", action: commit, value: "～" }, swipe_down: { label: "an", action: "none", display: "key" }, long_press: { display: "bubble", values: ["j", "J"] } }
-      k: { tap: "k", swipe_up: { label: "·", action: commit, value: "·" }, swipe_down: { label: "ing\nuai", action: "none", display: "key" }, long_press: { display: "bubble", values: ["k", "K"] } }
+      k: { tap: "k", swipe_up: { label: "%", action: commit, value: "%" }, swipe_down: { label: "ing\nuai", action: "none", display: "key" }, long_press: { display: "bubble", values: ["k", "K"] } }
       l: { tap: "l", swipe_down: { label: "iang\nuang", action: "none", display: "key" }, long_press: { display: "bubble", values: ["l", "L"] } }
 
       # ── 第三行：z/x/c/v/b/n/m 上滑执行英文下滑编辑功能，显示用符号/缩写 ──
