@@ -1,0 +1,13 @@
+patch:
+  # 1. 让 / 可以作为首码进入 speller，而不是被 punctuator 拦截
+  speller/initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/"
+
+  # 2. 半角标点：/ 不再映射顿号，只保留斜杠本身
+  punctuator/punctuator/half_shape:
+    __include: default:/punctuator/half_shape
+    '/': ['/']
+
+  # 3. 全角标点：同样处理，避免全角模式下仍出顿号
+  punctuator/punctuator/full_shape:
+    __include: default:/punctuator/full_shape
+    '/': ['／']
