@@ -1,7 +1,0 @@
-patch:
-  speller/initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/"
-  punctuator/import_preset: default
-  punctuator/punctuator/half_shape/+:
-    '/': ['/']
-  punctuator/punctuator/full_shape/+:
-    '/': ['／']
