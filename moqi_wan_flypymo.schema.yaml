@@ -17,12 +17,13 @@ switches:
     reset: 0
     states: ["中文", "西文"]
   - name: traditionalization
+    reset: 0
     states: ["简体", "繁體"]
   - name: emoji
     reset: 1
     states: ["💀", "😃"]
   - name: chaifen
-    reset: 1
+    reset: 0
     states: ["拆无", "拆首"]
   - name: chaifen_all
     reset: 0
