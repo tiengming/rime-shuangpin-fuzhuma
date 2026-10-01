@@ -35,15 +35,14 @@ schema:
 # -----------------------------------------------------------------------------
 # 通用模块引入 (来源于 moqi.yaml)
 # -----------------------------------------------------------------------------
-__include:
-  - moqi.yaml:/switches_engine
-  - moqi.yaml:/phrase
-  - moqi.yaml:/reverse
-  - moqi.yaml:/opencc_config
-  - moqi.yaml:/punctuator
-  - moqi.yaml:/guide
-  - moqi.yaml:/big_char_and_user_dict
-  - moqi:/octagram/enable_for_sentence
+__include: moqi.yaml:/switches_engine
+__include: moqi.yaml:/phrase
+__include: moqi.yaml:/reverse
+__include: moqi.yaml:/opencc_config
+__include: moqi.yaml:/punctuator
+__include: moqi.yaml:/guide
+__include: moqi.yaml:/big_char_and_user_dict
+__include: moqi:/octagram/enable_for_sentence
 # -----------------------------------------------------------------------------
 # 拼写处理器 (Speller) 配置
 # -----------------------------------------------------------------------------
