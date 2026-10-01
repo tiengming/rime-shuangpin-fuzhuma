@@ -19,7 +19,7 @@ pro_comment_format:                   # 超级注释，子项配置 true 开启�
 # -----------------------------------------------------------------------------
 schema:
   schema_id: moqi_wan_flypymo
-  name: 墨奇+小鹤双拼·墨奇
+  name: "🚀 小鹤·墨奇"
   version: "2024-05-11"
   author:
     - gaboolic
