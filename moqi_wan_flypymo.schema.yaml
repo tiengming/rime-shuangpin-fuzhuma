@@ -30,19 +30,6 @@ schema:
     - easy_en
 
 # -----------------------------------------------------------------------------
-# 通用模块引入 (合并为一个唯一的 __include 列表)
-# -----------------------------------------------------------------------------
-__include:
-  - moqi.yaml:/switches_engine
-  - moqi.yaml:/phrase
-  - moqi.yaml:/reverse
-  - moqi.yaml:/opencc_config
-  - moqi.yaml:/punctuator
-  - moqi.yaml:/guide
-  - moqi.yaml:/big_char_and_user_dict
-  - moqi:/octagram/enable_for_sentence
-
-# -----------------------------------------------------------------------------
 # 拼写处理器 (Speller) 配置
 # -----------------------------------------------------------------------------
 speller:
@@ -75,14 +62,25 @@ aux_patch:
   __append:
     __include: moqi_speller.yaml:/common_aux
 
+# -----------------------------------------------------------------------------
+# 统一补丁与多文件引入 (解决 __include 重复 Key 问题)
+# -----------------------------------------------------------------------------
 __patch:
-  add_user_dict/dictionary: moqi_wan.extended
-  user_dict_set/dictionary: moqi_wan.extended
-  translator/prism: moqi_wan_flypymo
-  user_dict_set/prism: moqi_wan_flypymo
-  add_user_dict/prism: moqi_wan_flypymo
-  speller/algebra/+:
-    __include: aux_patch
+  - moqi.yaml:/switches_engine
+  - moqi.yaml:/phrase
+  - moqi.yaml:/reverse
+  - moqi.yaml:/opencc_config
+  - moqi.yaml:/punctuator
+  - moqi.yaml:/guide
+  - moqi.yaml:/big_char_and_user_dict
+  - moqi:/octagram/enable_for_sentence
+  - add_user_dict/dictionary: moqi_wan.extended
+    user_dict_set/dictionary: moqi_wan.extended
+    translator/prism: moqi_wan_flypymo
+    user_dict_set/prism: moqi_wan_flypymo
+    add_user_dict/prism: moqi_wan_flypymo
+    speller/algebra/+:
+      __include: aux_patch
 
 # -----------------------------------------------------------------------------
 # 按键绑定 (Key Binder) 与高效交互定义
