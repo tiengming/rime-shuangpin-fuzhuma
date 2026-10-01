@@ -1,83 +1,68 @@
 # Rime schema
 # encoding: utf-8
 # https://github.com/gaboolic/rime-shuangpin-fuzhuma
+#Lua 配置: 超级注释模块
+pro_comment_format:                   # 超级注释，子项配置 true 开启，false 关闭
+  fuzhu_code: true                    # 启用辅助码提醒，用于辅助输入练习辅助码，成熟后可关闭
+  candidate_length: 3                 # 候选词辅助码提醒的生效长度，0为关闭  但同时清空其它，应当使用上面开关来处理    
+  fuzhu_type: moqi                     # 用于匹配对应的辅助码注释显示，可选显示类型有：moqi, flypy, zrm, jdh, cj, tiger, wubi,选择一个填入，应与上面辅助码类型一致
 
-# -----------------------------------------------------------------------------
-# Lua 配置: 超级注释模块 (pro_comment_format.lua)
-# 控制候选列表中错词错音提醒以及辅助码注释的显示格式
-# -----------------------------------------------------------------------------
-pro_comment_format:
-  fuzhu_code: true
-  candidate_length: 3
-  fuzhu_type: moqi
-  corrector: true
-  corrector_type: "{comment}"
+  corrector: true                     # 启用错音错词提醒，例如输入 geiyu 给予 获得 jiyu 提示
+  corrector_type: "{comment}"         # 新增一个显示类型，比如"【{comment}】" 
 
-# -----------------------------------------------------------------------------
-# 方案基本定义
-# -----------------------------------------------------------------------------
 schema:
   schema_id: moqi_wan_flypymo
-  name: "🚀 小鹤·墨奇"
+  name: "🚀 小鹤·墨奇"                # 你喜欢的 name，保留
   version: "2024-05-11"
   author:
     - gaboolic
   description: |
-    墨奇辅助码 小鹤双拼版 大词库版本 非自动上屏，支持4万字
-    拆分规则参考：https://github.com/gaboolic/rime-shuangpin-fuzhuma/wiki/%E5%A2%A8%E5%A5%87%E7%A0%81%E6%8B%86%E5%88%86%E8%A7%84%E5%88%99
+    墨奇辅助码 小鹤双拼版 大词库版本 非自动上屏，支持4万字 https://github.com/gaboolic/rime-shuangpin-fuzhuma/wiki/%E5%A2%A8%E5%A5%87%E7%A0%81%E6%8B%86%E5%88%86%E8%A7%84%E5%88%99
   dependencies:
+    - reverse_moqima
+    - radical_flypy
+    - cangjie5
+    - stroke
+    - zrlf
     - emoji
     - easy_en
+    - jp_sela
 
-# -----------------------------------------------------------------------------
-# 通用模块引入 (使用 __include 的 Map 结构，避免重复 Key，确保引擎优先加载)
-# -----------------------------------------------------------------------------
+# 将原本重复的 __include 合并为一个列表，顺序与原出现顺序一致
 __include:
-  switches_engine: moqi.yaml:/switches_engine        # 开关与引擎组件 (包含 engine)
-  phrase: moqi.yaml:/phrase                          # 固顶词典与自定义短语
-  reverse: moqi.yaml:/reverse                        # 反查与部件组字
-  opencc_config: moqi.yaml:/opencc_config            # OpenCC 转换
-  punctuator: moqi.yaml:/punctuator                  # 标点符号映射
-  guide: moqi.yaml:/guide                            # 引导前缀
-  big_char_and_user_dict: moqi.yaml:/big_char_and_user_dict  # 扩展字集与用户词典
-  octagram: moqi:/octagram/enable_for_sentence       # 语言模型支持
+  - moqi.yaml:/switches_engine
+  - moqi.yaml:/phrase # 置顶
+  - moqi.yaml:/reverse #反查配置
+  - moqi.yaml:/opencc_config # 拆分 英汉互译 火星文
+  - moqi.yaml:/punctuator # 标点
+  - moqi.yaml:/guide # 引导前缀配置
+  - moqi.yaml:/big_char_and_user_dict # 大字集、自造词
+  - moqi:/octagram/enable_for_sentence # 启用語言模型
 
-# -----------------------------------------------------------------------------
-# 拼写处理器 (Speller) 配置
-# -----------------------------------------------------------------------------
 speller:
   max_code_length: 5
   auto_select: false
-  auto_select_pattern: '^[a-z]+/|^[a-df-zA-DF-Z]\w{3}|^e\w{4}|;[a-z]'
-  alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`[/|"
-  initials: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA"
+  auto_select_pattern: ^[a-z]+/|^[a-df-zA-DF-Z]\w{3}|^e\w{4}|;[a-z]
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`[/|
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"
   algebra:
     __include: moqi_speller.yaml:/flypy_speller
 
-# -----------------------------------------------------------------------------
-# 核心主翻译器 (Translator) 配置
-# -----------------------------------------------------------------------------
 translator:
   dictionary: moqi_wan.extended
   initial_quality: 10000
   enable_completion: false
   spelling_hints: 10
-  comment_format: "{comment}"
+  comment_format: {comment}
   enable_user_dict: true
-  preedit_format: []
+  preedit_format:
 
-# -----------------------------------------------------------------------------
-# 辅助码 Patch 配置
-# -----------------------------------------------------------------------------
 aux_patch:
   __include: moqi_speller.yaml:/moqi_aux
   __append:
     __include: moqi_speller.yaml:/common_aux
 
-# -----------------------------------------------------------------------------
-# 补丁操作 (仅用于修改已有节点，不用于引入模块)
-# -----------------------------------------------------------------------------
 __patch:
   add_user_dict/dictionary: moqi_wan.extended
   user_dict_set/dictionary: moqi_wan.extended
@@ -87,30 +72,21 @@ __patch:
   speller/algebra/+:
     __include: aux_patch
 
-# -----------------------------------------------------------------------------
-# 按键绑定 (Key Binder) 与高效交互定义
-# -----------------------------------------------------------------------------
+# 快捷键
 key_binder:
   import_preset: default
   bindings:
-    # --- 基础控制与选词快捷键 ---
     - { when: composing, accept: Control+m, send: Return }
     - { when: composing, accept: Control+w, send: Control+BackSpace }
     - { when: has_menu, accept: semicolon, send: 2 }
     - { when: composing, accept: Control+i, send: Shift+Right }
     - { when: composing, accept: Control+o, send: Shift+Left }
-
-    # --- 快捷开关（OpenCC 及滤镜） ---
     - { when: has_menu, accept: "Control+p", toggle: chaifen }
     - { when: has_menu, accept: "Control+l", toggle: chaifen_all }
     - { when: has_menu, accept: "Control+e", toggle: chinese_english }
-
-    # --- 快速引导符号 ---
-    - { match: "[a-z]{1,3}", accept: Tab, send_sequence: "/1" }
-    - { match: "[a-z]{1,3}", accept: "/", send_sequence: "/1" }
-    - { match: "[a-z]{1,3}", accept: ".", send_sequence: "/1" }
-
-    # --- 跨音节辅助码补充 (Control+1~7) ---
+    - { match: "[a-z]{1,3}", accept: Tab,  send_sequence: "/1" }
+    - { match: "[a-z]{1,3}", accept: "/",  send_sequence: "/1" }
+    - { match: "[a-z]{1,3}", accept: ".",  send_sequence: "/1" }
     - { when: composing, accept: Control+1, send_sequence: '{Home}{Shift+Right}[' }
     - { when: composing, accept: Control+2, send_sequence: '{Home}{Shift+Right}{Shift+Right}[' }
     - { when: composing, accept: Control+3, send_sequence: '{Home}{Shift+Right}{Shift+Right}{Shift+Right}[' }
@@ -118,8 +94,6 @@ key_binder:
     - { when: composing, accept: Control+5, send_sequence: '{Home}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}[' }
     - { when: composing, accept: Control+6, send_sequence: '{Home}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}[' }
     - { when: composing, accept: Control+7, send_sequence: '{Home}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}[' }
-
-    # --- 首字大写直接为首字筛选辅助码 (Shift+A~Z) ---
     - { when: has_menu, accept: Shift+A, send_sequence: "{Shift+Right}a{Shift+Right}" }
     - { when: has_menu, accept: Shift+B, send_sequence: "{Shift+Right}b{Shift+Right}" }
     - { when: has_menu, accept: Shift+C, send_sequence: "{Shift+Right}c{Shift+Right}" }
@@ -147,9 +121,6 @@ key_binder:
     - { when: has_menu, accept: Shift+Y, send_sequence: "{Shift+Right}y{Shift+Right}" }
     - { when: has_menu, accept: Shift+Z, send_sequence: "{Shift+Right}z{Shift+Right}" }
 
-# -----------------------------------------------------------------------------
-# 自定义短语配置 (Custom Phrase)
-# -----------------------------------------------------------------------------
 custom_phrase:
   dictionary: ""
   user_dict: custom_phrase/custom_phrase
@@ -158,7 +129,6 @@ custom_phrase:
   enable_sentence: false
   initial_quality: 100001
 
-# 3码出简让全
 custom_phrase_3_code:
   dictionary: ""
   user_dict: custom_phrase/custom_phrase_3_code
