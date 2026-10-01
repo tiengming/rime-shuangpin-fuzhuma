@@ -1,0 +1,60 @@
+name: Dict Pipeline CI/CD
+
+on:
+  push:
+    branches:
+      - moqiall
+      - main
+    paths:
+      - 'cn_dicts/**'
+      - 'cn_dicts_cell/**'
+      - 'cn_dicts_common/**'
+      - 'scripts/**'
+      - '.github/workflows/dict_ci.yml'
+  workflow_dispatch:
+
+jobs:
+  clean_and_lint:
+    name: Clean, Validate & Package Dictionary
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml pandas
+
+      - name: Run Clean & Deduplication Script
+        run: |
+          python scripts/clean_dict.py
+
+      - name: Validate YAML Syntax
+        run: |
+          python -c "
+          import yaml, glob
+          for f in glob.glob('**/*.yaml', recursive=True):
+              try:
+                  with open(f, 'r', encoding='utf-8') as stream:
+                      yaml.safe_load(stream)
+              except Exception as e:
+                  print(f'YAML error in {f}: {e}')
+          "
+
+      - name: Package Release Bundle
+        run: |
+          mkdir -p release_dist
+          zip -r release_dist/rime-moqi-all-dicts.zip cn_dicts cn_dicts_common cn_dicts_cell moqi_*.dict.yaml README.md
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: moqiall-dict-package
+          path: release_dist/rime-moqi-all-dicts.zip
