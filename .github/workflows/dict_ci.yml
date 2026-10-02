@@ -34,6 +34,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取完整历史以确保 auto-commit 正常 Push
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -65,13 +67,13 @@ jobs:
         run: |
           python scripts/clean_dict.py
 
-      - name: Check Source Drift
-        run: |
-          git diff --stat
-          git diff --exit-code || {
-            echo "::error::词库尚未在本地完成清洗提交！请在本地运行 'python scripts/clean_dict.py' 并提交变更后再打 Tag。"
-            exit 1
-          }
+      - name: Auto Commit Cleaned Dicts
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ci): auto-sanitize and reweight dictionaries [skip ci]"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
 
       - name: Generate Release Notes
         if: startsWith(github.ref, 'refs/tags/v')
