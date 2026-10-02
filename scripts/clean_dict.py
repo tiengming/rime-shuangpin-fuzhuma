@@ -1,192 +1,277 @@
 #!/usr/bin/env python3
 """
-Rime 词库清洗与权重归一化工具
-修复要点：
-1. 全局两趟（Two-Pass）扫描归一化，防止细胞词库权重异常拉伸。
-2. 严谨解析 Header (以单独成行的 '...' 划分) 与 TSV Body。
-3. 容错处理权重解析（正确支持负数、小数，防静默污染）。
-4. 保护单字与 w=0 词条。
+Rime 词库清洗与全局权重归一化工具（无损格式保留版）
+能够统一多目录下的词库文件，通过全局两趟（Two-Pass）扫描避免细胞词库权重倒挂，
+同时利用 raw_line 保留原文件的分节注释与空行。
 """
 
 import argparse
 import math
-import os
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Optional, Tuple
+
 import yaml
 
-
-TARGET_MIN = 10
-TARGET_MAX = 500000
+TARGET_MIN: int = 10
+TARGET_MAX: int = 500000
 
 
 class DictEntry:
-    def __init__(self, text: str, code: str, weight: Optional[float], raw_line: str):
-        self.text = text
-        self.code = code
-        self.weight = weight
-        self.raw_line = raw_line
+  def __init__(
+      self,
+      text: str,
+      code: str,
+      weight: Optional[float],
+      raw_line: str,
+      is_comment: bool = False,
+  ):
+    self.text = text
+    self.code = code
+    self.weight = weight
+    self.raw_line = raw_line
+    self.is_comment = is_comment
 
-    @property
-    def key(self) -> Tuple[str, str]:
-        return self.text, self.code
+  @property
+  def key(self) -> Tuple[str, str]:
+    return self.text, self.code
+
+  @property
+  def is_phrase(self) -> bool:
+    """是否为需要参与 Log 对数归一化的多字词组"""
+    return (
+        not self.is_comment
+        and len(self.text) > 1
+        and self.weight is not None
+        and self.weight > 0
+    )
 
 
 def parse_dict_file(file_path: Path) -> Tuple[List[str], List[DictEntry]]:
-    """分离 Header (YAML) 与 TSV 正文，校验 Header 合法性"""
-    with open(file_path, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+  """分离 YAML Header 与 TSV Body，保留空行与注释，校验 YAML 合法性"""
+  lines = file_path.read_text(encoding="utf-8").splitlines(keepends=True)
+  header_lines: List[str] = []
+  body_lines: List[str] = []
+  found_delimiter = False
 
-    header_lines = []
-    body_lines = []
-    found_delimiter = False
-
-    for line in lines:
-        if not found_delimiter:
-            header_lines.append(line)
-            if line.rstrip("\r\n") == "...":
-                found_delimiter = True
-        else:
-            body_lines.append(line)
-
-    # 如果没找到独立的 '...' 终止符，说明无合规 Header，全量归为 Body
+  for line in lines:
     if not found_delimiter:
-        body_lines = header_lines
-        header_lines = []
+      header_lines.append(line)
+      if line.rstrip("\r\n") == "...":
+        found_delimiter = True
+    else:
+      body_lines.append(line)
 
-    # 校验 Header YAML
-    if header_lines:
-        try:
-            yaml.safe_load("".join(header_lines))
-        except Exception as e:
-            print(f"[WARN] {file_path.name} Header YAML 解析异常: {e}", file=sys.stderr)
+  if not found_delimiter:
+    body_lines = header_lines
+    header_lines = []
 
-    # 解析 Body TSV
-    entries = []
-    for line in body_lines:
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            continue  # 空行及全行注释直接跳过或作为结构保留
+  if header_lines:
+    try:
+      yaml.safe_load("".join(header_lines))
+    except Exception as e:
+      print(
+          f"[WARN] 文件 {file_path.name} Header YAML 解析异常: {e}",
+          file=sys.stderr,
+      )
 
-        parts = line.rstrip("\r\n").split("\t")
-        text = parts[0].strip()
-        code = parts[1].strip() if len(parts) > 1 else ""
-        weight = None
+  entries: List[DictEntry] = []
+  for line in body_lines:
+    stripped = line.strip()
+    # 纯空行或注释行打标记，后续原样回填，保证格式与注释零损失
+    if not stripped or stripped.startswith("#"):
+      entries.append(DictEntry("", "", None, line, is_comment=True))
+      continue
 
-        if len(parts) > 2 and parts[2].strip():
-            try:
-                weight = float(parts[2].strip())
-            except ValueError:
-                print(f"[WARN] 文件 {file_path.name} 包含非法权重值: '{parts[2]}'", file=sys.stderr)
-                weight = None
+    parts = line.rstrip("\r\n").split("\t")
+    text = parts[0].strip()
+    code = parts[1].strip() if len(parts) > 1 else ""
+    weight: Optional[float] = None
 
-        entries.append(DictEntry(text=text, code=code, weight=weight, raw_line=line))
+    if len(parts) > 2 and parts[2].strip():
+      try:
+        weight = float(parts[2].strip())
+      except ValueError:
+        print(
+            f"[WARN] 文件 {file_path.name} 包含非法权重值: '{parts[2]}'",
+            file=sys.stderr,
+        )
 
-    return header_lines, entries
+    entries.append(
+        DictEntry(
+            text=text, code=code, weight=weight, raw_line=line, is_comment=False
+        )
+    )
+
+  return header_lines, entries
 
 
-def process_dictionaries(files: List[Path], dry_run: bool = False):
-    parsed_data = {}
-    
-    # 第一趟 Pass 1: 解析、去重、过滤长低频词、收集全局 Log 权重 Min/Max
-    global_min_log = float("inf")
-    global_max_log = float("-inf")
-    total_raw_count = 0
-    total_clean_count = 0
+def process_dictionaries(
+    files: List[Path], min_threshold: float = 2.0, dry_run: bool = False
+) -> int:
+  parsed_data = {}
+  global_min_log = float("inf")
+  global_max_log = float("-inf")
+  total_raw_count = 0
+  total_clean_count = 0
 
-    for file_path in files:
-        header_lines, raw_entries = parse_dict_file(file_path)
-        total_raw_count += len(raw_entries)
+  # Pass 1: 解析、去重、长低频词过滤、统计全局 Log 权重区间
+  for file_path in files:
+    header_lines, raw_entries = parse_dict_file(file_path)
 
-        # 去重与清洗
-        dedup_map: Dict[Tuple[str, str], DictEntry] = {}
-        for entry in raw_entries:
-            # 规则：过滤长低频词 (len > 4 且 0 < w < 2)；保留 w == 0
-            if len(entry.text) > 4 and entry.weight is not None and 0 < entry.weight < 2:
-                continue
+    comments = [e for e in raw_entries if e.is_comment]
+    real_entries = [e for e in raw_entries if not e.is_comment]
+    total_raw_count += len(real_entries)
 
-            key = entry.key
-            if key not in dedup_map:
-                dedup_map[key] = entry
-            else:
-                # 出现重复项，保留高权重者
-                old_w = dedup_map[key].weight or 0
-                new_w = entry.weight or 0
-                if new_w > old_w:
-                    dedup_map[key] = entry
+    dedup_map: Dict[Tuple[str, str], DictEntry] = {}
+    for entry in real_entries:
+      # 过滤长低频词 (len > 4 且 0 < weight < min_threshold)，安全保留 w == 0
+      if (
+          len(entry.text) > 4
+          and entry.weight is not None
+          and 0 < entry.weight < min_threshold
+      ):
+        continue
 
-        cleaned_entries = list(dedup_map.values())
-        total_clean_count += len(cleaned_entries)
+      key = entry.key
+      if key not in dedup_map:
+        dedup_map[key] = entry
+      else:
+        # 重复词条保留较高权重者
+        old_w = dedup_map[key].weight or 0
+        new_w = entry.weight or 0
+        if new_w > old_w:
+          dedup_map[key] = entry
 
-        # 统计全局 Log 权重区间 (跳过单字保护项与 w <= 0)
-        for entry in cleaned_entries:
-            if len(entry.text) > 1 and entry.weight is not None and entry.weight > 0:
-                log_w = math.log(entry.weight)
-                if log_w < global_min_log:
-                    global_min_log = log_w
-                if log_w > global_max_log:
-                    global_max_log = log_w
+    cleaned_real = list(dedup_map.values())
+    total_clean_count += len(cleaned_real)
 
-        parsed_data[file_path] = {
-            "header": header_lines,
-            "entries": cleaned_entries
-        }
+    # 包含真实词条与原位置注释行
+    all_cleaned = cleaned_real + comments
 
-    # 第二趟 Pass 2: 使用全局 Min/Max 计算对数归一化，写入文件
-    has_valid_range = global_max_log > global_min_log
+    # 统计全局 Log 权重区间 (仅针对多字词组，跳过单字与 <=0 词条)
+    for entry in cleaned_real:
+      if entry.is_phrase:
+        log_w = math.log(entry.weight)
+        if log_w < global_min_log:
+          global_min_log = log_w
+        if log_w > global_max_log:
+          global_max_log = log_w
 
-    for file_path, data in parsed_data.items():
-        header_lines = data["header"]
-        entries = data["entries"]
-        output_lines = list(header_lines)
+    parsed_data[file_path] = {"header": header_lines, "entries": all_cleaned}
 
-        for entry in entries:
-            # 单字保护 或 无权重 / 零权重：保留原始权重或不作缩放
-            if len(entry.text) == 1 or entry.weight is None or entry.weight <= 0:
-                norm_weight_str = f"{int(entry.weight)}" if entry.weight is not None else ""
-            elif has_valid_range:
-                log_w = math.log(entry.weight)
-                ratio = (log_w - global_min_log) / (global_max_log - global_min_log)
-                norm_weight = int(TARGET_MIN + ratio * (TARGET_MAX - TARGET_MIN))
-                norm_weight_str = str(norm_weight)
-            else:
-                norm_weight_str = str(TARGET_MAX)
+  has_valid_range = (
+      global_max_log > global_min_log and math.isfinite(global_min_log)
+  )
 
-            # 重新拼装 TSV 行
-            if norm_weight_str:
-                line_str = f"{entry.text}\t{entry.code}\t{norm_weight_str}\n"
-            else:
-                line_str = f"{entry.text}\t{entry.code}\n"
-            
-            output_lines.append(line_str)
+  # Pass 2: 基于全局 Min/Max 计算对数归一化，写回文件
+  for file_path, data in parsed_data.items():
+    header_lines = data["header"]
+    entries = data["entries"]
+    output_lines = list(header_lines)
 
-        if not dry_run:
-            with open(file_path, "w", encoding="utf-8") as f:
-                f.writelines(output_lines)
+    for entry in entries:
+      # 1. 纯注释/空行：直接原样输出 raw_line，零损失
+      if entry.is_comment:
+        output_lines.append(entry.raw_line.rstrip("\r\n") + "\n")
+        continue
 
-    reduction_rate = (1 - total_clean_count / total_raw_count) * 100 if total_raw_count > 0 else 0
-    print(f"[STAT] 原始词条: {total_raw_count} | 清洗后: {total_clean_count} | 瘦身率: {reduction_rate:.2f}%")
+      # 2. 单字保护 / 无权重 / w <= 0：不参与归一化，输出原始整数权重或空
+      if not entry.is_phrase:
+        norm_weight_str = (
+            f"{int(entry.weight)}" if entry.weight is not None else ""
+        )
+      elif has_valid_range:
+        log_w = math.log(entry.weight)
+        ratio = (log_w - global_min_log) / (global_max_log - global_min_log)
+        norm_weight = int(TARGET_MIN + ratio * (TARGET_MAX - TARGET_MIN))
+        norm_weight_str = str(norm_weight)
+      else:
+        norm_weight_str = str(TARGET_MAX)
+
+      # 3. 拼装 TSV 行
+      if norm_weight_str:
+        output_lines.append(f"{entry.text}\t{entry.code}\t{norm_weight_str}\n")
+      else:
+        output_lines.append(f"{entry.text}\t{entry.code}\n")
+
+    if not dry_run:
+      file_path.write_text("".join(output_lines), encoding="utf-8")
+
+  reduction_rate = (
+      (1 - total_clean_count / total_raw_count) * 100
+      if total_raw_count > 0
+      else 0
+  )
+  tag = "DRY-RUN" if dry_run else "DONE"
+  print(
+      f"[{tag}] 处理文件数: {len(files)} | 原始词条: {total_raw_count} |"
+      f" 清洗后: {total_clean_count} | 瘦身率: {reduction_rate:.2f}%"
+  )
+  if has_valid_range:
+    print(
+        f"[RANGE] 全局 Log 原始权重映射区间: {math.exp(global_min_log):.1f} ~"
+        f" {math.exp(global_max_log):.0f}"
+    )
+  else:
+    print("[RANGE] 未发现可用于归一化的有效词组权重")
+
+  return 0
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Rime 词库清洗与全局归一化")
-    parser.add_argument("--dry-run", action="store_true", help="仅查看瘦身与统计结果，不修改文件")
-    parser.add_argument("--dir", type=str, default="cn_dicts", help="词库目录路径")
-    args = parser.parse_args()
+  parser = argparse.ArgumentParser(
+      description="Rime 词库清洗与全局归一化工具"
+  )
+  parser.add_argument(
+      "--dirs",
+      nargs="+",
+      default=["cn_dicts", "cn_dicts_common", "cn_dicts_cell"],
+      help="需要统一归一化的词库目录列表",
+  )
+  parser.add_argument(
+      "--min-threshold",
+      type=float,
+      default=2.0,
+      help="长词 (len>4) 被剔除的低频权重阈值 (默认 < 2.0)",
+  )
+  parser.add_argument(
+      "--dry-run",
+      action="store_true",
+      help="仅输出统计分析与瘦身预览，不修改落盘文件",
+  )
+  args = parser.parse_args()
 
-    dict_dir = Path(args.dir)
-    if not dict_dir.exists():
-        print(f"[ERROR] 目标目录不存在: {dict_dir}", file=sys.stderr)
-        sys.exit(1)
+  existing_dirs = [d for d in args.dirs if Path(d).exists()]
+  if not existing_dirs:
+    print(f"[ERROR] 指定的目录均不存在: {args.dirs}", file=sys.stderr)
+    sys.exit(1)
 
-    files = list(dict_dir.glob("**/*.dict.yaml"))
-    if not files:
-        print(f"[WARN] 未找到任何 .dict.yaml 文件于 {dict_dir}")
-        return
+  missing_dirs = set(args.dirs) - set(existing_dirs)
+  if missing_dirs:
+    print(f"[WARN] 跳过未找到的目录: {sorted(missing_dirs)}", file=sys.stderr)
 
-    process_dictionaries(files, dry_run=args.dry_run)
+  target_files = sorted(
+      [
+          f
+          for d in existing_dirs
+          for f in Path(d).glob("**/*.dict.yaml")
+          if f.is_file()
+      ]
+  )
+
+  if not target_files:
+    print(f"[WARN] 指定目录下未查找到任何 .dict.yaml 文件", file=sys.stderr)
+    sys.exit(0)
+
+  sys.exit(
+      process_dictionaries(
+          files=target_files,
+          min_threshold=args.min_threshold,
+          dry_run=args.dry_run,
+      )
+  )
 
 
 if __name__ == "__main__":
-    main()
+  main()
