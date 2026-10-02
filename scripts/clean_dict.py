@@ -17,6 +17,7 @@ def is_cell_dict(file_path: Path) -> bool:
 
 def should_keep_entry(text: str, weight: float, is_cell: bool) -> bool:
     """根据词长、权重和词库类型综合判定词条留存"""
+    # 0 或未填权重的词条（如快捷码/辅助码）必须保留
     if weight == 0:
         return True
 
@@ -138,8 +139,10 @@ def process_dictionaries(files, dry_run=False):
     log_min = math.log(min_w) if min_w > 0 else 0
     log_max = math.log(max_w) if max_w > log_min else log_min + 1
 
-    TARGET_MIN = 10.0
-    TARGET_MAX = 500000.0
+    # 设定平滑归一化的目标权重区间
+    DEFAULT_FALLBACK_WEIGHT = 10000.0  # 未显式填写权重的词条默认保底权重
+    TARGET_MIN = 10000.0              # 对数归一化的最低显示权重
+    TARGET_MAX = 500000.0             # 单字/最高频词的最大权重
 
     print(f"[RANGE] 原始权重区间: {min_w:.1f} ~ {max_w:.1f}")
 
@@ -162,7 +165,8 @@ def process_dictionaries(files, dry_run=False):
                     norm_val = TARGET_MIN + (math.log(w) - log_min) / (log_max - log_min) * (TARGET_MAX - TARGET_MIN)
                     norm_w = int(round(norm_val))
                 else:
-                    norm_w = 0
+                    # 关键修复：无显式权重的词条赋予 10000 保底权重，绝不设为 0
+                    norm_w = int(DEFAULT_FALLBACK_WEIGHT)
 
                 formatted_line = f"{text}\t{code}\t{norm_w}" if code else f"{text}\t\t{norm_w}"
                 output_lines.append(formatted_line)
