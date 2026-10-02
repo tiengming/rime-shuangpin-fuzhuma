@@ -2,22 +2,34 @@ name: Dict Pipeline CI/CD
 
 on:
   push:
-    branches: [main, master, moqiall]
+    branches: [moqiall] # 仅监听自己的 moqiall 分支
+    tags:
+      - 'v*' # 当基于 moqiall 推送形如 v1.0.0 的 Tag 时触发 Release
     paths:
       - 'cn_dicts*/**'
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/dict_ci.yml'
   pull_request:
-    branches: [main, master]
+    branches: [moqiall] # 仅对目标为 moqiall 分支的 PR 生效
     paths:
       - 'cn_dicts*/**'
       - 'scripts/**'
+      - 'tests/**'
       - '.github/workflows/dict_ci.yml'
   workflow_dispatch:
 
+# 连续提交时自动清理旧的工作流运行
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  clean-and-package:
+  validate-and-release:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Code
@@ -27,6 +39,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install Dependencies
         run: |
@@ -35,15 +48,19 @@ jobs:
 
       - name: Run Unit Tests
         run: |
-          if [ -d "tests" ] && [ -n "$(ls -A tests 2>/dev/null)" ]; then
-            pytest tests/ -v
-          else
-            echo "::notice::tests/ 目录不存在或为空，跳过单测"
-          fi
+          pytest tests/ -v
 
       - name: Dry-Run Cleanup Report
+        shell: bash
         run: |
+          set -o pipefail
           python scripts/clean_dict.py --dry-run | tee dryrun.log
+
+          # 输出到 Action 运行界面面板
+          echo "### 📊 词库清洗预检报告 (Dry-Run)" >> $GITHUB_STEP_SUMMARY
+          echo '```text' >> $GITHUB_STEP_SUMMARY
+          cat dryrun.log >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
 
       - name: Execute Global Cleanup
         run: |
@@ -53,34 +70,60 @@ jobs:
         run: |
           git diff --stat
           git diff --exit-code || {
-            echo "::error::词库尚未在本地完成清洗提交！请在本地运行 'python scripts/clean_dict.py' 后重新提交。"
+            echo "::error::词库尚未在本地完成清洗提交！请在本地运行 'python scripts/clean_dict.py' 并提交变更后再打 Tag。"
             exit 1
           }
 
-      - name: Package Dictionaries
+      - name: Generate Release Notes
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: bash
         run: |
-          INCLUDE=""
-          for d in cn_dicts cn_dicts_common cn_dicts_cell; do
-            if [ -d "$d" ] && [ -n "$(ls -A "$d" 2>/dev/null)" ]; then
-              INCLUDE="$INCLUDE $d"
-            fi
-          done
+          RAW_LOG=$(cat dryrun.log)
 
-          if [ -z "$INCLUDE" ]; then
-            echo "::error::未检测到任何可打包的词库目录"
-            exit 1
-          fi
+          # 正则提取干跑数据
+          FILES=$(echo "$RAW_LOG" | grep -oP '处理文件数:\s*\K\d+' || echo "0")
+          ORIGINAL=$(echo "$RAW_LOG" | grep -oP '原始词条:\s*\K\d+' || echo "0")
+          CLEANED=$(echo "$RAW_LOG" | grep -oP '清洗后:\s*\K\d+' || echo "0")
+          RATE=$(echo "$RAW_LOG" | grep -oP '瘦身率:\s*\K[\d\.]+%?' || echo "0%")
 
-          EXTRA=""
-          if [ -f "README.md" ]; then
-            EXTRA="README.md"
-          fi
+          REMOVED=$((ORIGINAL - CLEANED))
 
-          zip -r dict_output.zip $INCLUDE $EXTRA -x '*.git*'
+          # 动态生成 Release 文档
+          cat << EOF > release_body.md
+          ## 🚀 Rime 词库自动清洗与重配权发布 (moqiall)
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+          本 Release 由 CI/CD 自动化流水线构建，完成了词库去重、死码过滤及全局权重归一化。
+
+          ### 📊 词库瘦身与清理统计
+
+          | 统计维度 | 词条数量 / 数值 | 说明 |
+          | :--- | :--- | :--- |
+          | 📂 **处理词库文件** | \`${FILES}\` 个 | 覆盖全量分类词库 |
+          | 📑 **清洗前词条数** | \`${ORIGINAL}\` 条 | 原始词库合并项 |
+          | ✨ **清洗后词条数** | \`${CLEANED}\` 条 | 过滤垃圾词/重复项后 |
+          | 🗑️ **实际精简词条** | **\`-${REMOVED}\`** 条 | 剔除的死词与错码 |
+          | 📉 **最终瘦身率** | **\`${RATE}\`** | 内存与检索效率提升 |
+
+          > 💡 **优化说明**：全局归一化去除了悬殊权重，解决不同词库拉通后低频词抢占首选的问题，显著提升 Rime 部署与加载速度。
+
+          <details>
+          <summary>🔍 点击查看原始干跑日志 (Dry-Run Log)</summary>
+
+          \`\`\`text
+          ${RAW_LOG}
+          \`\`\`
+
+          </details>
+          EOF
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
         with:
-          name: rime-clean-dictionaries
-          path: dict_output.zip
-          retention-days: 30
+          name: Release ${{ github.ref_name }}
+          body_path: release_body.md
+          target_commitish: moqiall # 明确指定 Release 指向 moqiall 分支
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
