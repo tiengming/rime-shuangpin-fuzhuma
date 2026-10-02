@@ -1,21 +1,22 @@
-name: Clean, Validate and Artifacts
+name: Dict Pipeline CI/CD
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master, moqiall]
     paths:
+      - 'cn_dicts*/**'
       - 'scripts/**'
-      - 'cn_dicts/**'
       - '.github/workflows/dict_ci.yml'
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
     paths:
+      - 'cn_dicts*/**'
       - 'scripts/**'
-      - 'cn_dicts/**'
       - '.github/workflows/dict_ci.yml'
+  workflow_dispatch:
 
 jobs:
-  build-and-validate:
+  clean-and-package:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,32 +35,48 @@ jobs:
 
       - name: Run Unit Tests
         run: |
-          pytest tests/
+          if [ -d "tests" ] && [ -n "$(ls -A tests 2>/dev/null)" ]; then
+            pytest tests/ -v
+          else
+            echo "::notice::tests/ 目录不存在或为空，跳过单测"
+          fi
 
-      - name: Dry-Run Cleanup
+      - name: Dry-Run Cleanup Report
         run: |
-          python scripts/clean_dict.py --dir cn_dicts --dry-run
+          python scripts/clean_dict.py --dry-run | tee dryrun.log
 
-      - name: Execute Cleanup
+      - name: Execute Global Cleanup
         run: |
-          python scripts/clean_dict.py --dir cn_dicts
+          python scripts/clean_dict.py
 
-      - name: Check for Uncommitted Drift
+      - name: Check Source Drift
         run: |
           git diff --stat
-          # 若期望 CI 检查提交一致性（如果不一致则报错提醒开发者本地未清洗），解除下行注释：
-          # git diff --exit-code
+          git diff --exit-code || {
+            echo "::error::词库尚未在本地完成清洗提交！请在本地运行 'python scripts/clean_dict.py' 后重新提交。"
+            exit 1
+          }
 
-      - name: Packaging Output
+      - name: Package Dictionaries
         run: |
-          # 检查目录是否存在且非空，防止 zip 退出码报错
-          if [ -d "cn_dicts" ] && [ "$(ls -A cn_dicts)" ]; then
-            # 修正 zip 语法：排除模式 -x 必须放在最后
-            zip -r dict_output.zip cn_dicts README.md -x '*.git*'
-          else
-            echo "[ERROR] cn_dicts 目录不存在或为空，取消打包"
+          INCLUDE=""
+          for d in cn_dicts cn_dicts_common cn_dicts_cell; do
+            if [ -d "$d" ] && [ -n "$(ls -A "$d" 2>/dev/null)" ]; then
+              INCLUDE="$INCLUDE $d"
+            fi
+          done
+
+          if [ -z "$INCLUDE" ]; then
+            echo "::error::未检测到任何可打包的词库目录"
             exit 1
           fi
+
+          EXTRA=""
+          if [ -f "README.md" ]; then
+            EXTRA="README.md"
+          fi
+
+          zip -r dict_output.zip $INCLUDE $EXTRA -x '*.git*'
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
