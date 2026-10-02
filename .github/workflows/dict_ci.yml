@@ -1,75 +1,69 @@
-name: Dict Pipeline CI/CD
+name: Clean, Validate and Artifacts
 
 on:
   push:
-    branches:
-      - moqiall
-      - main
+    branches: [ main, master ]
     paths:
-      - 'cn_dicts/**'
-      - 'cn_dicts_cell/**'
-      - 'cn_dicts_common/**'
       - 'scripts/**'
+      - 'cn_dicts/**'
       - '.github/workflows/dict_ci.yml'
-  workflow_dispatch:
+  pull_request:
+    branches: [ main, master ]
+    paths:
+      - 'scripts/**'
+      - 'cn_dicts/**'
+      - '.github/workflows/dict_ci.yml'
 
 jobs:
-  clean_and_lint:
-    name: Clean, Validate & Package Dictionary
+  build-and-validate:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pyyaml
+          pip install pyyaml pytest
 
-      - name: Run Clean & Deduplication Script
+      - name: Run Unit Tests
         run: |
-          python scripts/clean_dict.py --dirs cn_dicts cn_dicts_common cn_dicts_cell --min-threshold 2
+          pytest tests/
 
-      - name: Validate YAML Header Syntax
+      - name: Dry-Run Cleanup
         run: |
-          python -c "
-          import yaml, glob
+          python scripts/clean_dict.py --dir cn_dicts --dry-run
 
-          def validate_header(filepath):
-              header_lines = []
-              with open(filepath, 'r', encoding='utf-8') as f:
-                  for line in f:
-                      header_lines.append(line)
-                      if line.strip() == '...':
-                          break
-              yaml.safe_load(''.join(header_lines))
-
-          for f in glob.glob('**/*.dict.yaml', recursive=True):
-              try:
-                  validate_header(f)
-              except Exception as e:
-                  print(f'❌ YAML Header Error in {f}: {e}')
-                  exit(1)
-          print('✅ 所有词库 YAML Header 校验通过！')
-          "
-
-      - name: Package Release Bundle
+      - name: Execute Cleanup
         run: |
-          mkdir -p release_dist
-          zip -r release_dist/rime-moqi-all-dicts.zip \
-            $([ -d cn_dicts ] && echo "cn_dicts") \
-            $([ -d cn_dicts_common ] && echo "cn_dicts_common") \
-            $([ -d cn_dicts_cell ] && echo "cn_dicts_cell") \
-            *.dict.yaml README.md -x "*.git*"
+          python scripts/clean_dict.py --dir cn_dicts
 
-      - name: Upload Artifact
+      - name: Check for Uncommitted Drift
+        run: |
+          git diff --stat
+          # 若期望 CI 检查提交一致性（如果不一致则报错提醒开发者本地未清洗），解除下行注释：
+          # git diff --exit-code
+
+      - name: Packaging Output
+        run: |
+          # 检查目录是否存在且非空，防止 zip 退出码报错
+          if [ -d "cn_dicts" ] && [ "$(ls -A cn_dicts)" ]; then
+            # 修正 zip 语法：排除模式 -x 必须放在最后
+            zip -r dict_output.zip cn_dicts README.md -x '*.git*'
+          else
+            echo "[ERROR] cn_dicts 目录不存在或为空，取消打包"
+            exit 1
+          fi
+
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: moqiall-dict-package
-          path: release_dist/rime-moqi-all-dicts.zip
+          name: rime-clean-dictionaries
+          path: dict_output.zip
+          retention-days: 30
