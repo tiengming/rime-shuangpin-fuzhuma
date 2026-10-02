@@ -7,30 +7,30 @@ name: computer
 version: "2024-07-19"
 sort: by_weight
 ...
-入参	ru;pn;pn;pd;ee,uh;oh;ju;ty;pn; can;sp;sp;sp;pu;ih;ke;cd;vp;	88235
-出参	chu;uu;vk;ck,aa;pp;uu;sm;bm;va; can;sp;sp;sp;pu;ih;ke;cd;vp;	51939
-强依赖	qiang;gi;gi;gs;rf;ni;bc;xk;gi; yi;ry;ry;ry;xk;ov;jt;wy;rh; lai;ub;ur;uf;dm;do;xo;gk;ur;	73488
-发版	fa;fy;vd;ay,fd,vy,yd;rh,rl;ie;si;v,nt;vy; ban;py;py;pf;ul;le,xe;ar;th;py;	105811
-竞业	jing;lx;le;lx;bk;yu;ip;uk;le; ye;la;la;aa;pd,hd;tc,xc;cy;og;aa;	118461
+入参	ru;pn;pn;pd;ee,uh;oh;ju;ty;pn; can;sp;sp;sp;pu;ih;ke;cd;vp;	249676
+出参	chu;uu;vk;ck,aa;pp;uu;sm;bm;va; can;sp;sp;sp;pu;ih;ke;cd;vp;	173200
+强依赖	qiang;gi;gi;gs;rf;ni;bc;xk;gi; yi;ry;ry;ry;xk;ov;jt;wy;rh; lai;ub;ur;uf;dm;do;xo;gk;ur;	223284
+发版	fa;fy;vd;ay,fd,vy,yd;rh,rl;ie;si;v,nt;vy; ban;py;py;pf;ul;le,xe;ar;th;py;	275890
+竞业	jing;lx;le;lx;bk;yu;ip;uk;le; ye;la;la;aa;pd,hd;tc,xc;cy;og;aa;	292187
 父级目录	fu;bx;bx;bi,pd;fy;ck;hb;wq;bx; ji;sj;sj;sj;eh;ve;ic;xe;sj; mu;ke;ka;aa,om,mu;ss;bu;qm;hh;we; lu;eu;eu;au,ua,vu;so,sf;ne;bk;vi;vu;	0
 会邀	hui;ry;rs;ry;ep;oi;jb;wf;rv; yao;zw;zw;zj,zw;sq;yk;uu;ry;zw;	0
-主域名	zhu;wt;dw;dw;ig,ha;yg;in;y,yg;wt; yu;ta;ta;th;gd,gh,ga;gm;gf;fa;tg; ming;xk;xk;xk;fo;nr;ld;qk;xk;	68671
-限频	xian;eg;eg;eg;bh;nv;ti;bv;eh; pin;vy;vr;yb;rm;yo;sw;hi;vr;	43895
-废标	fei;gy;gd;gf;rh,rl;ie;xi;yn;gy; biao;mu;mx;mu;wf;df;ef;sf;lx;	61083
-必传	bi;xp;dd;dd,xp;nu;ph;ht;nt;dd; chuan;rv;rv;rv;xh;oi;ji;wf;rv;	88235
-智谱	zhi;uo;uo;ov;ev;oa;oo;td;uo; pu;yo;yo;yp;cv;ia;so;yu;yo;	88235
-深度求索	shen;dm;dm;dm;kw;ed;ke;ip;dl; du;gy;gy;gy;rl;ie;xr;ya;gy; qiu;au,ad;ad;ad;dh;ie;fi;fi;ad; suo;ux;ux;sb,us;sf;jf;ni;fp;ux;	88235
-科大讯飞	ke;hd;hu;hd;uh,us;hj;xj;tu;hu; da;ar;un;ad;xx;kk;md;dd;an; xun;yu;yu;yu,yx;cs;ij;sn;yn;yu; fei;vd;vd;yd;rh;no,xo;cf;nu;vd;	88235
-百川智能	bai;ab;ab;ab;ds;ma;fu;dj;ab; chuan;pl;pl;pa;up;ll;oc;kt;pa; zhi;uo;uo;ov;ev;oa;oo;td;uo; neng;sb;sb;sb;pa;ip;kv;ce;vb;	88235
-零一万物	ling;ys;ys;yl;yp,yh;mi;tk;fw;yv; yi;aa;aa;aa;dd;mm;fi;g,gg;aa; wan;av;ap;ag,ap;du;ms;fp;dn;ap; wu;nw;nw;nw;bi,bu;hh;qe;tr;nw;	76715
-阶跃星辰	jie;ej;el;ej;bp;nl;tp;bw;ej; yue;zy;zy;zy;gx;rk;pm;kh;zy; xing;ou;ou;ou;vg,va;am;ol;jt;ou; chen;iy;in;iy;rh;mv;fc;df;ih;	76715
-面壁智能	mian;ao;aa;aa;dd,du;ml;bm;dm;aa; bi;ut;ut;tb,tx;qg;sg;cg;nk;ut; zhi;uo;uo;ov;ev;oa;oo;td;uo; neng;sb;sb;sb;pa;ip;kv;ce;vb;	67571
-生数科技	sheng;pf;pf;na;eg;hm;ls;tg;pa; shu;mw;mw;wl;lj;fk;ph;ov;mw; ke;hd;hu;hd;uh,us;hj;xj;tu;hu; ji;fv;fy;fv;jl;qe;uc;rf;fy;	67571
-旷视科技	kuang;og;og;og;vr;ai;ox;jy;og; shi;pj;pe;ju,uj;hk,hr;iu;fe;py;pj; ke;hd;hu;hd;uh,us;hj;xj;tu;hu; ji;fv;fy;fv;jl;qe;uc;rf;fy;	88235
-商汤科技	shang;wk;wk;wk,lk,dk;io;yr;id;um;wk; tang;dp;dp;dy;ku;eh;ke;in;dp; ke;hd;hu;hd;uh,us;hj;xj;tu;hu; ji;fv;fy;fv;jl;qe;uc;rf;fy;	88235
-拓竹	tuo;fu;fu;fu;jt;qr;um;rd;fk; zhu;gg;pl,gg;gg;nn;hh;ru;tt;pd;	88235
-世界书	shi;cv;av;ca,cv,aa;vr;pt;la;an;av; jie;tj;tl;tj;wp;wl;qp;lw;tj; shu;vd;vd;ad,vd;rh;is;ai;nn;vd;	76715
+主域名	zhu;wt;dw;dw;ig,ha;yg;in;y,yg;wt; yu;ta;ta;th;gd,gh,ga;gm;gf;fa;tg; ming;xk;xk;xk;fo;nr;ld;qk;xk;	213500
+限频	xian;eg;eg;eg;bh;nv;ti;bv;eh; pin;vy;vr;yb;rm;yo;sw;hi;vr;	148917
+废标	fei;gy;gd;gf;rh,rl;ie;xi;yn;gy; biao;mu;mx;mu;wf;df;ef;sf;lx;	196602
+必传	bi;xp;dd;dd,xp;nu;ph;ht;nt;dd; chuan;rv;rv;rv;xh;oi;ji;wf;rv;	249676
+智谱	zhi;uo;uo;ov;ev;oa;oo;td;uo; pu;yo;yo;yp;cv;ia;so;yu;yo;	249676
+深度求索	shen;dm;dm;dm;kw;ed;ke;ip;dl; du;gy;gy;gy;rl;ie;xr;ya;gy; qiu;au,ad;ad;ad;dh;ie;fi;fi;ad; suo;ux;ux;sb,us;sf;jf;ni;fp;ux;	249676
+科大讯飞	ke;hd;hu;hd;uh,us;hj;xj;tu;hu; da;ar;un;ad;xx;kk;md;dd;an; xun;yu;yu;yu,yx;cs;ij;sn;yn;yu; fei;vd;vd;yd;rh;no,xo;cf;nu;vd;	249676
+百川智能	bai;ab;ab;ab;ds;ma;fu;dj;ab; chuan;pl;pl;pa;up;ll;oc;kt;pa; zhi;uo;uo;ov;ev;oa;oo;td;uo; neng;sb;sb;sb;pa;ip;kv;ce;vb;	249676
+零一万物	ling;ys;ys;yl;yp,yh;mi;tk;fw;yv; yi;aa;aa;aa;dd;mm;fi;g,gg;aa; wan;av;ap;ag,ap;du;ms;fp;dn;ap; wu;nw;nw;nw;bi,bu;hh;qe;tr;nw;	229486
+阶跃星辰	jie;ej;el;ej;bp;nl;tp;bw;ej; yue;zy;zy;zy;gx;rk;pm;kh;zy; xing;ou;ou;ou;vg,va;am;ol;jt;ou; chen;iy;in;iy;rh;mv;fc;df;ih;	229486
+面壁智能	mian;ao;aa;aa;dd,du;ml;bm;dm;aa; bi;ut;ut;tb,tx;qg;sg;cg;nk;ut; zhi;uo;uo;ov;ev;oa;oo;td;uo; neng;sb;sb;sb;pa;ip;kv;ce;vb;	211170
+生数科技	sheng;pf;pf;na;eg;hm;ls;tg;pa; shu;mw;mw;wl;lj;fk;ph;ov;mw; ke;hd;hu;hd;uh,us;hj;xj;tu;hu; ji;fv;fy;fv;jl;qe;uc;rf;fy;	211170
+旷视科技	kuang;og;og;og;vr;ai;ox;jy;og; shi;pj;pe;ju,uj;hk,hr;iu;fe;py;pj; ke;hd;hu;hd;uh,us;hj;xj;tu;hu; ji;fv;fy;fv;jl;qe;uc;rf;fy;	249676
+商汤科技	shang;wk;wk;wk,lk,dk;io;yr;id;um;wk; tang;dp;dp;dy;ku;eh;ke;in;dp; ke;hd;hu;hd;uh,us;hj;xj;tu;hu; ji;fv;fy;fv;jl;qe;uc;rf;fy;	249676
+拓竹	tuo;fu;fu;fu;jt;qr;um;rd;fk; zhu;gg;pl,gg;gg;nn;hh;ru;tt;pd;	249676
+世界书	shi;cv;av;ca,cv,aa;vr;pt;la;an;av; jie;tj;tl;tj;wp;wl;qp;lw;tj; shu;vd;vd;ad,vd;rh;is;ai;nn;vd;	229486
 全站加速	quan;rw;rw;rw;ea;og;jn;wg;rw; zhan;lv;lk;lv;bo;yr;id;uh;lk; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk; su;zu;zu;zu;dq;yl;xu;gk;zu;	0
 全站客户端	quan;rw;rw;rw;ea;og;jn;wg;rw; zhan;lv;lk;lv;bo;yr;id;uh;lk; ke;bk;bk;bg;io;jr;ws;pt;gk; hu;du;du;dp,du;qq;is;mh;yn;du; duan;le;le;le;be;yb;il;um;le;	0
 全站导航	quan;rw;rw;rw;ea;og;jn;wg;rw; zhan;lv;lk;lv;bo;yr;id;uh;lk; dao;sc;sc;cs,sc;tk;ri;vk;nf;vc; hang;vj;vj;vk;ti;hn;io;te;vj;	0
-源站	yuan;dx;dx;dy;kf;ef;ky;id;dx; zhan;lv;lk;lv;bo;yr;id;uh;lk;	67571
+源站	yuan;dx;dx;dy;kf;ef;ky;id;dx; zhan;lv;lk;lv;bo;yr;id;uh;lk;	211170

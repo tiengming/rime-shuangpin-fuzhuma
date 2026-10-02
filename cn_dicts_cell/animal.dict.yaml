@@ -25,7 +25,7 @@ use_preset_vocabulary: true
 巴西特犬	ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; te;nc;nc;ns;bk;hi;qk;tr;nc; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 巴仙吉犬	ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; xian;ru;re;ru;xp;ou;jv;wm;rs; ji;tk;uk;ku,uk;go;gr;gd;fk;uk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 巴迅犬	ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; xun;zu;zu;zu,zx;rq;yj;au;nf;zu; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-斑点狗	ban;ww;ww;ww;aj,aa;mg;nn;gy;ww; dian;vh;lh;hv;pn;yf,xf;yc;hk;ve; gou;qj;qk;qj;bi;kr;mg;qt;qk;	68671
+斑点狗	ban;ww;ww;ww;aj,aa;mg;nn;gy;ww; dian;vh;lh;hv;pn;yf,xf;yc;hk;ve; gou;qj;qk;qj;bi;kr;mg;qt;qk;	213500
 斑点犬	ban;ww;ww;ww;aj,aa;mg;nn;gy;ww; dian;vh;lh;hv;pn;yf,xf;yc;hk;ve; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 伴侣犬	ban;rb;rb;rb;xp,xs;oq;ju;wu;rb; lv;rk;rk;rl;xo;or;jd;wk;rk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 半毛犬	ban;bf;dl;bf;fp,fs;fq;hu;uf;da; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -34,7 +34,7 @@ use_preset_vocabulary: true
 贝灵顿㹴	bei;kr;kr;ad,kr;mm;bo;ob;mh;ar; ling;eh;eh;hx,xh;st;sf;bc;vo;vh; dun;ty;tr;yt;dm;po;fw;gb;tr; geng;qg;qg;qg;;kk;mb;qt;;	0
 贝生吉犬	bei;kr;kr;ad,kr;mm;bo;ob;mh;ar; sheng;pf;pf;na;eg;hm;ls;tg;pa; ji;tk;uk;ku,uk;go;gr;gd;fk;uk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 毕高犬	bi;bu;bu;bu,ub;as;pj;vn;xx;bu; gao;wk;wk;wk;io;yr;gg;ym;wk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-比格犬	bi;bb;bb;bb;aa;pp;vv;xx;bb; ge;mk;mk;mg;wo;dr;es;st;lk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	57856
+比格犬	bi;bb;bb;bb;aa;pp;vv;xx;bb; ge;mk;mk;mg;wo;dr;es;st;lk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	188770
 毕格犬	bi;bu;bu;bu,ub;as;pj;vn;xx;bu; ge;mk;mk;mg;wo;dr;es;st;lk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 比利时牧羊犬	bi;bb;bb;bb;aa;pp;vv;xx;bb; li;hd;hd;hd,dh;ui;hn;xp;tj;hd; shi;oc;oc;oc;vk;ai;ok;jf;oc; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 边境㹴	bian;zl;zl;zl;uq;ys;su;lp;zl; jing;te;te;tj;gk;gu;gp;fu;te; geng;qg;qg;qg;;kk;mb;qt;;	0
@@ -48,7 +48,7 @@ use_preset_vocabulary: true
 波音达猎犬	bo;dp;dy;dp;kl;ee;kr;ih;dy; yin;lo;lo;lo;cc,bv;ya;xy;uj;lo; da;zd;zd;zd;xq;yk,xk;mu;dp;zd; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 查理士王猎犬	cha;md;ma;md;wd;dm;ef;sj;ld; li;wl;wl;wl;ag;mg;nd;gj;wl; shi;ua;ua;aa;gg;jm;gs;fg;ua; wang;at;at;aa;aa;mg;nw;gg;at; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 查理士王犬	cha;md;ma;md;wd;dm;ef;sj;ld; li;wl;wl;wl;ag;mg;nd;gj;wl; shi;ua;ua;aa;gg;jm;gs;fg;ua; wang;at;at;aa;aa;mg;nw;gg;at; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-柴犬	chai;vm;vm;mc;rw;yd;se;hx;vl; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	99935
+柴犬	chai;vm;vm;mc;rw;yd;se;hx;vl; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	267645
 长毛猎犬	chang;pn;pn;pd;uh;po;pc;ta;pn; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 长毛牧羊犬	chang;pn;pn;pd;uh;po;pc;ta;pn; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 长须牧羊犬	chang;pn;pn;pd;uh;po;pc;ta;pn; xu;py;pr;py,yp;um;ho;ew;ed;pr; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -60,7 +60,7 @@ use_preset_vocabulary: true
 斗鸡獚	dou;ud;du;du;hs,sh;yj;jd;uf;du; ji;yn;yn;ny,yn;lc;em;rx;cq;yn; huang;qb;qb;qh;;kc;mn;qt;;	0
 斗鸡犬	dou;ud;du;du;hs,sh;yj;jd;uf;du; ji;yn;yn;ny,yn;lc;em;rx;cq;yn; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 斗牛㹴	dou;ud;du;du;hs,sh;yj;jd;uf;du; niu;pu;pl;pa;bb;hq;qn;rh;pa; geng;qg;qg;qg;;kk;mb;qt;;	0
-斗牛犬	dou;ud;du;du;hs,sh;yj;jd;uf;du; niu;pu;pl;pa;bb;hq;qn;rh;pa; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	82632
+斗牛犬	dou;ud;du;du;hs,sh;yj;jd;uf;du; niu;pu;pl;pa;bb;hq;qn;rh;pa; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	240208
 杜宾狗	du;mt;mt;mt;wg;dg;eg;sf;lt; bin;bb;bb;bb;if;jc;wh;pr;gb; gou;qj;qk;qj;bi;kr;mg;qt;qk;	0
 短脚长身㹴	duan;ub;ua;ud;ed;ot;oz;td;ud; jiao;oe;oe;oq;lb;bl;vz;ef;oe; chang;pn;pn;pd;uh;po;pc;ta;pn; shen;zc;pp;pp;uu;hh;zs;tm;pp; geng;qg;qg;qg;;kk;mb;qt;;	0
 短脚狄文㹴	duan;ub;ua;ud;ed;ot;oz;td;ud; jiao;oe;oe;oq;lb;bl;vz;ef;oe; di;qh;qh;qh;bt;kf;mc;qt;qh; wen;wx;wx;wi,dd;jj;yk;vw;yy;wx; geng;qg;qg;qg;;kk;mb;qt;;	0
@@ -74,12 +74,12 @@ use_preset_vocabulary: true
 高地牧羊犬	gao;wk;wk;wk;io;yr;gg;ym;wk; di;ty;ty;ty;gr,ga;gd;ge;f,fb;ty; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 格陵兰犬	ge;mk;mk;mg;wo;dr;es;st;lk; ling;ew;ew;el,ew;bj;ne;th;bf;ew; lan;bs;bs;bs,qe;fu;tm;ht;uf;es; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 㹴类犬	geng;qg;qg;qg;;kk;mb;qt;; lei;md;md;md;lx;fk;pm;od;md; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-工作犬	gong;aa;aa;aa;pp;mm;ug;a,aa;aa; zuo;rv;rv;rv;xu;os;jw;wt;rv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	56051
+工作犬	gong;aa;aa;aa;pp;mm;ug;a,aa;aa; zuo;rv;rv;rv;xu;os;jw;wt;rv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	184196
 古典英国牧羊犬	gu;uk;uk;uk;so;jr;cg;dg;uk; dian;qb;lb;ba,bd;pf;tc;ih;ma;ab; ying;cy;cy;cy;zx,ze;tk;lm;am;cy; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 古英国牧羊犬	gu;uk;uk;uk;so;jr;cg;dg;uk; ying;cy;cy;cy;zx,ze;tk;lm;am;cy; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-哈巴狗	ha;kk;kk;kh;oo;rr;dd;kw;kk; ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; gou;qj;qk;qj;bi;kr;mg;qt;qk;	87780
+哈巴狗	ha;kk;kk;kh;oo;rr;dd;kw;kk; ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; gou;qj;qk;qj;bi;kr;mg;qt;qk;	248930
 哈巴犬	ha;kk;kk;kh;oo;rr;dd;kw;kk; ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-哈士奇	ha;kk;kk;kh;oo;rr;dd;kw;kk; shi;ua;ua;aa;gg;jm;gs;fg;ua; qi;dk;dk;dk;xj,xo;kr;mz;ds;dk;	127168
+哈士奇	ha;kk;kk;kh;oo;rr;dd;kw;kk; shi;ua;ua;aa;gg;jm;gs;fg;ua; qi;dk;dk;dk;xj,xo;kr;mz;ds;dk;	302423
 荷兰毛狮犬	he;ck;ck;ch;zj,zo;tr;lz;aw;ck; lan;bs;bs;bs,qe;fu;tm;ht;uf;es; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; shi;qj;qj;qu;by;kb;mr;qt;qj; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 狐狸犬	hu;qg;qg;qg;bh;ko;my;qt;qg; li;ql;ql;ql;bg;kg;md;qt;ql; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 湖畔㹴	hu;do;do;dh;kl;eb;kv;id;do; pan;tb;tb;tb;wp,ws;wq;qu;lu;tb; geng;qg;qg;qg;;kk;mb;qt;;	0
@@ -87,7 +87,7 @@ use_preset_vocabulary: true
 惠比犬特	hui;ix;ax;xh,hx;dn,sn;jp;nh;gj;ax; bi;bb;bb;bb;aa;pp;vv;xx;bb; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd; te;nc;nc;ns;bk;hi;qk;tr;nc;	0
 惠比特犬	hui;ix;ax;xh,hx;dn,sn;jp;nh;gj;ax; bi;bb;bb;bb;aa;pp;vv;xx;bb; te;nc;nc;ns;bk;hi;qk;tr;nc; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 基斯犬	ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-吉娃娃	ji;tk;uk;ku,uk;go;gr;gd;fk;uk; wa;nt;nt;ng;yg;vg;bg;vf;nt; wa;nt;nt;ng;yg;vg;bg;vf;nt;	99392
+吉娃娃	ji;tk;uk;ku,uk;go;gr;gd;fk;uk; wa;nt;nt;ng;yg;vg;bg;vf;nt; wa;nt;nt;ng;yg;vg;bg;vf;nt;	266859
 杰克拉西尔㹴	jie;mh;mh;hm,mh;wn;df;ec;so;le; ke;ux,ge;ue;eg,ux;sk;ju;cp;dq;ue; la;fl;fl;fl;jb;qt;ui;ru;fl; xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; er;dx;dx;dx,xd;gf;nf;xy;qi;ex; geng;qg;qg;qg;;kk;mb;qt;;	0
 金毛寻回犬	jin;rb;ra;ra,pa;ed,ef;cc;zj;qq;ra; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; xun;ec;ec;cx,xc;sk;si;bk;vf;vc; hui;kk;kk;kk;no;wr;rd;lk;wk; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 金色猎犬	jin;rb;ra;ra,pa;ed,ef;cc;zj;qq;ra; se;db;db;db;gt;nu;xm;qc;eb; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -105,15 +105,15 @@ use_preset_vocabulary: true
 克伦伯长猎犬	ke;ux,ge;ue;eg,ux;sk;ju;cp;dq;ue; lun;rl;rb;rl;ea,xa;op;jj;ww;rb; bo;rb;rb;rb;xs;oa;ju;wr;rb; chang;pn;pn;pd;uh;po;pc;ta;pn; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 拉萨狗	la;fl;fl;fl;jb;qt;ui;ru;fl; sa;ci;ci;ci;zu,zr;th;lx;ab;ci; gou;qj;qk;qj;bi;kr;mg;qt;qk;	0
 拉萨犬	la;fl;fl;fl;jb;qt;ui;ru;fl; sa;ci;ci;ci;zu,zr;th;lx;ab;ci; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-莱卡	lai;cl;cl;cl;zf,zl;tt;lh;ag;cl; ka;ub;ub;bx,ub;ph;yy;yy;hh;ub;	131796
-狼犬	lang;ql;ql;ql;bh;kv;mi;qt;qh; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	51939
+莱卡	lai;cl;cl;cl;zf,zl;tt;lh;ag;cl; ka;ub;ub;bx,ub;ph;yy;yy;hh;ub;	307581
+狼犬	lang;ql;ql;ql;bh;kv;mi;qt;qh; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	173200
 老式英国牧羊犬	lao;lb;lb;bl,lb;ga;jp;ql;ft;ub; shi;yg;yg;gy,yg;dh,ha,ap;im;pu;aa;gg; ying;cy;cy;cy;zx,ze;tk;lm;am;cy; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 猎麋	lie;qo;qo;qx;bv;ka;mo;qt;qo; mi;lm;gm;lm;rl;id;xp;yn;gm;	0
 猎枪犬	lie;qo;qo;qx;bv;ka;mo;qt;qo; qiang;mv;mv;mc;wt;du;ez;sw;lv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-猎犬	lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	120384
+猎犬	lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	294511
 猎雉犬	lie;qo;qo;qx;bv;ka;mo;qt;qo; zhi;uv;uf;uv;ea;og;ou;td;ua; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-灵缇	ling;eh;eh;hx,xh;st;sf;bc;vo;vh; ti;sz;sr;su;ee;vo;it;xj;sr;	40418
-路路	lu;zk;zk;zg;go;rr;ps;kh;zk; lu;zk;zk;zg;go;rr;ps;kh;zk;	90385
+灵缇	ling;eh;eh;hx,xh;st;sf;bc;vo;vh; ti;sz;sr;su;ee;vo;it;xj;sr;	137008
+路路	lu;zk;zk;zg;go;rr;ps;kh;zk; lu;zk;zk;zg;go;rr;ps;kh;zk;	253150
 洛德瓦拉笃宾犬	luo;dk;dk;dg;ko;er;ks;it;dk; de;rx;ix;xx;hn;hp;wh;tf;rx; wa;ad;ad;ad;dh;mi;rw;gn;ad; la;fl;fl;fl;jb;qt;ui;ru;fl; du;vm;vm;vm;nz;hm;rn;tc;vm; bin;bb;bb;bb;if;jc;wh;pr;gb; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 罗得西亚背脊犬	luo;sx;sx;sx;af;wi;yl;lq;sx; de;rc;ic;xc;hk;hi;wk;tj;rc; xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; ya;ay;ay;ay;dd;mc;fc;go;ay; bei;bo;lo;ob;ll;lb;av;ux;bo; ji;ro;do;od,or;fl;fb;wv;iw;do; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 罗红犬	luo;sx;sx;sx;af;wi;yl;lq;sx; hong;sg;sg;sg;ep;vm;iu;xa;sg; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -144,7 +144,7 @@ use_preset_vocabulary: true
 魔天仙	mo;gg;gg;gm,mg;ds,rs,rp,dp;ii;za;ys;gv; tian;ad;ad;ad;ue;mk;fm;gd;ad; xian;ru;re;ru;xp;ou;jv;wm;rs;	0
 牧场长毛猎犬	mu;nw;nw;nw;bj;hk;qh;tr;nw; chang;tp;tp;ty;gu;gh;ge;fn;tp; chang;pn;pn;pd;uh;po;pc;ta;pn; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 牡丹犬	mu;nt;nt;nt;bg;hg;qg;tr;nt; dan;kd;pa;pd;ua,ud,uz,od,oz;by;mz;my;pa; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-牧羊犬	mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	101741
+牧羊犬	mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	270230
 南非獒犬	nan;ug;ug,ag;ua,uy;ss,sp;jj;ng;fm;uu; fei;ls;la;aa;pu,up;ly;rf;dj;aa; ao;fq;fq;qa,qw;ab,ah;gk,qk;am;gq;aq; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 牛头㹴	niu;pu;pl;pa;bb;hq;qn;rh;pa; tou;dd;dd;dd;hx;yk,xk;wm;ud;dd; geng;qg;qg;qg;;kk;mb;qt;;	0
 诺福㹴	nuo;yk;yk;yr;co;ir;sd;ya;yk; fu;pt;pt;uf,ut;hw;iw;fq;py;pt; geng;qg;qg;qg;;kk;mb;qt;;	0
@@ -156,7 +156,7 @@ use_preset_vocabulary: true
 骑士查理王猎犬	qi;mk;mk;mq;zj,zo;nr;nz;cd;mk; shi;ua;ua;aa;gg;jm;gs;fg;ua; cha;md;ma;md;wd;dm;ef;sj;ld; li;wl;wl;wl;ag;mg;nd;gj;wl; wang;at;at;aa;aa;mg;nw;gg;at; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 枪猎犬	qiang;mv;mv;mc;wt;du;ez;sw;lv; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 秦得圣赫伯特犬	qin;ih;fh;hf,fh;uf,uw;qd;ax;dw;ah; de;rc;ic;xc;hk;hi;wk;tj;rc; sheng;yt;yt;ty,yt;lg;eg;rg;cf;yt; he;ii;td;ii;gf,gi;gc;gc;fo;ti; bo;rb;rb;rb;xs;oa;ju;wr;rb; te;nc;nc;ns;bk;hi;qk;tr;nc; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-秋田犬	qiu;hh;hh;hh;ut;hf;xc;to;hh; tian;ku;ku;aa;ww;ww;qt;ll;wu; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	91190
+秋田犬	qiu;hh;hh;hh;ut;hf;xc;to;hh; tian;ku;ku;aa;ww;ww;qt;ll;wu; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	254430
 日本狐狸犬	ri;ka;ka;aa,or,ri;vv;aa;or;jj;wa; ben;ma;aa;aa,ma;wd;dm;ef;sg;aa; hu;qg;qg;qg;bh;ko;my;qt;qg; li;ql;ql;ql;bg;kg;md;qt;ql; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 日本獚	ri;ka;ka;aa,or,ri;vv;aa;or;jj;wa; ben;ma;aa;aa,ma;wd;dm;ef;sg;aa; huang;qb;qb;qh;;kc;mn;qt;;	0
 日本狮子犬	ri;ka;ka;aa,or,ri;vv;aa;or;jj;wa; ben;ma;aa;aa,ma;wd;dm;ef;sg;aa; shi;qj;qj;qu;by;kb;mr;qt;qj; zi;la;va;aa,vh;aa;nd;hi;bb;va; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -168,18 +168,18 @@ use_preset_vocabulary: true
 塞蒙地犬	sai;bt;bt;tb,bt;ig;jg;wg;pf;gt; meng;cu;cu,cn;cm,cu;zh;to;lj;ap;cn; di;ty;ty;ty;gr,ga;gd;ge;f,fb;ty; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 三斑犬	san;ae;ae;aa;uu;mm;ts;dg;ae; ban;ww;ww;ww;aj,aa;mg;nn;gy;ww; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 沙克犬	sha;du;du;du;ku;eh;kt;ii;du; ke;ux,ge;ue;eg,ux;sk;ju;cp;dq;ue; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-沙皮	sha;du;du;du;ku;eh;kt;ii;du; pi;py;vy;ad,ay,vd,vy,ya;rl;de;rp;hc;vy;	46906
-沙皮狗	sha;du;du;du;ku;eh;kt;ii;du; pi;py;vy;ad,ay,vd,vy,ya;rl;de;rp;hc;vy; gou;qj;qk;qj;bi;kr;mg;qt;qk;	68671
-圣伯纳	sheng;yt;yt;ty,yt;lg;eg;rg;cf;yt; bo;rb;rb;rb;xs;oa;ju;wr;rb; na;sn;sn;sn;ee;vb;ij;xm;sn;	61083
+沙皮	sha;du;du;du;ku;eh;kt;ii;du; pi;py;vy;ad,ay,vd,vy,ya;rl;de;rp;hc;vy;	158491
+沙皮狗	sha;du;du;du;ku;eh;kt;ii;du; pi;py;vy;ad,ay,vd,vy,ya;rl;de;rp;hc;vy; gou;qj;qk;qj;bi;kr;mg;qt;qk;	213500
+圣伯纳	sheng;yt;yt;ty,yt;lg;eg;rg;cf;yt; bo;rb;rb;rb;xs;oa;ju;wr;rb; na;sn;sn;sn;ee;vb;ij;xm;sn;	196602
 狮毛犬	shi;qj;qj;qu;by;kb;mr;qt;qj; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 史柔查㹴	shi;kn;ln;ad,ki;oy,oh;lk;db;kq;an; rou;mm;sm;mm;pw;nd;ie;cb;vl; cha;md;ma;md;wd;dm;ef;sj;ld; geng;qg;qg;qg;;kk;mb;qt;;	0
 史塔副郡牛头㹴	shi;kn;ln;ad,ki;oy,oh;lk;db;kq;an; ta;tk;tk;td,th;go;gr;gd;fa;tk; fu;ad;ad;df,dt;di;mn;fp;gk;ad; jun;ye;ye;ej;rb,sb;sl;bt;vt;ye; niu;pu;pl;pa;bb;hq;qn;rh;pa; tou;dd;dd;dd;hx;yk,xk;wm;ud;dd; geng;qg;qg;qg;;kk;mb;qt;;	0
 实用犬	shi;bd;bd;bt;ix;jk;wm;pu;gd; yong;kf,ol;kl;kf;lp;bq;ty;et;pa; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-狮子狗	shi;qj;qj;qu;by;kb;mr;qt;qj; zi;la;va;aa,vh;aa;nd;hi;bb;va; gou;qj;qk;qj;bi;kr;mg;qt;qk;	90385
+狮子狗	shi;qj;qj;qu;by;kb;mr;qt;qj; zi;la;va;aa,vh;aa;nd;hi;bb;va; gou;qj;qk;qj;bi;kr;mg;qt;qk;	253150
 四国犬	si;ke;ke;aa,ke;nk;wc;ys;lh;we; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 斯开岛㹴	si;cj;qj;jq,qj;vp;tl;zt;ad;qj; kai;ac;ac;ac;dz,dp,up;mt;fl;ga;aa; dao;nu;pe;nu,un;up;pu;xv;qy;ps; geng;qg;qg;qg;;kk;mb;qt;;	0
 丝毛㹴	si;sa;va;aa;ee,rd;vm;ii;xx;ss; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; geng;qg;qg;qg;;kk;mb;qt;;	0
-松狮	song;mg;ms;mg;wp;di;ek;sw;lv; shi;qj;qj;qu;by;kb;mr;qt;qj;	68671
+松狮	song;mg;ms;mg;wp;di;ek;sw;lv; shi;qj;qj;qu;by;kb;mr;qt;qj;	213500
 松狮犬	song;mg;ms;mg;wp;di;ek;sw;lv; shi;qj;qj;qu;by;kb;mr;qt;qj; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 松鼠犬	song;mg;ms;mg;wp;di;ek;sw;lv; shu;jv;jv;ju;sr;hv;ps;vn;jv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 苏俄牧羊犬	su;cb;cb;cb;zf;tc;lh;al;cb; e;rw;rw;rw;xa;oi;jp;wt;rg; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -205,11 +205,11 @@ use_preset_vocabulary: true
 西里汉㹴	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; li;tt;la;aa,tt;vg;wg;dl;jf;aa; han;dy;dy;dy;kl;ee;kr;ic;dy; geng;qg;qg;qg;;kk;mb;qt;;	0
 西摩犬	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; mo;gu;gu;mu,um;do,dp,rp;iq;zu;ys;gu; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 西帕凯犬	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; pa;jb;jb;jb;ys;la;ru;mh;jb; kai;uj;ej;jj,jq;pi;un;vo;mn;sj; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-西施	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; shi;fy;fy;fy;fr;yd;le;yt;fy;	141648
+西施	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; shi;fy;fy;fy;fr;yd;le;yt;fy;	317985
 西施犬	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; shi;fy;fy;fy;fr;yd;le;yt;fy; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 西藏㹴	xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; zang;ci;ci;cg,ci;zh;ts;lq;ad;cg; geng;qg;qg;qg;;kk;mb;qt;;	0
 小丹犬	xiao;lb;ld;ad;pf;nc;yx;ih;vd; dan;kd;pa;pd;ua,ud,uz,od,oz;by;mz;my;pa; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-小猎犬	xiao;lb;ld;ad;pf;nc;yx;ih;vd; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	82046
+小猎犬	xiao;lb;ld;ad;pf;nc;yx;ih;vd; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	239181
 小鹿犬	xiao;lb;ld;ad;pf;nc;yx;ih;vd; lu;gb;gb;gb,lb;ra;ip;xl;yn;gb; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 小史揉查犬	xiao;lb;ld;ad;pf;nc;yx;ih;vd; shi;kn;ln;ad,ki;oy,oh;lk;db;kq;an; rou;fm;fm;fr;jw;qd;ue;rc;fl; cha;md;ma;md;wd;dm;ef;sj;ld; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 小型施诺泽犬	xiao;lb;ld;ad;pf;nc;yx;ih;vd; xing;kt;kt;tx;ug;mg;fg;ga;kt; shi;fy;fy;fy;fr;yd;le;yt;fy; nuo;yk;yk;yr;co;ir;sd;ya;yk; ze;df;dl;df;kp;eq;ku;ic;da; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -222,7 +222,7 @@ use_preset_vocabulary: true
 雪梨犬	xue;ye;ye;yx;ys;mm;tb;fv;ya; li;hm;hm;ml;uw;hd,xd;xe;tj;hl; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 英国激飞可卡长毛猎犬	ying;cy;cy;cy;zx,ze;tk;lm;am;cy; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; ji;dw;dw;dj,dw;kj;ek;kh;ir;dw; fei;vd;vd;yd;rh;no,xo;cf;nu;vd; ke;dk;dk;dk;jj,jo;mr;zk;sk;av; ka;ub;ub;bx,ub;ph;yy;yy;hh;ub; chang;pn;pn;pd;uh;po;pc;ta;pn; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; lie;qo;qo;qx;bv;ka;mo;qt;qo; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 英国小型猎免犬	ying;cy;cy;cy;zx,ze;tk;lm;am;cy; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; xiao;lb;ld;ad;pf;nc;yx;ih;vd; xing;kt;kt;tx;ug;mg;fg;ga;kt; lie;qo;qo;qx;bv;ka;mo;qt;qo; mian;de;dv;de,dm;gk;nu;wp;qk;ev; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-约克夏	yue;su;su;su;eh;vi;ii;xq;su; ke;ux,ge;ue;eg,ux;sk;ju;cp;dq;ue; xia;bw;aw;wz,aw;dj;me;fh;dh;aw;	57856
+约克夏	yue;su;su;su;eh;vi;ii;xq;su; ke;ux,ge;ue;eg,ux;sk;ju;cp;dq;ue; xia;bw;aw;wz,aw;dj;me;fh;dh;aw;	188770
 约克夏㹴	yue;su;su;su;eh;vi;ii;xq;su; ke;ux,ge;ue;eg,ux;sk;ju;cp;dq;ue; xia;bw;aw;wz,aw;dj;me;fh;dh;aw; geng;qg;qg;qg;;kk;mb;qt;;	0
 约瑟犬	yue;su;su;su;eh;vi;ii;xq;su; se;wb;wb;wb;au;mh;nt;gg;wb; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 约瑟猩	yue;su;su;su;eh;vi;ii;xq;su; se;wb;wb;wb;au;mh;nt;gg;wb; xing;qu;qu;qx;ba,bg;km;ml;qt;qu;	0
@@ -231,37 +231,37 @@ use_preset_vocabulary: true
 中国食犬	zhong;kl;ll;aa,ka;op;ll;dg;k,kh;aa; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; shi;rg;rl;rl,pd;eh;ov;qs;wy;rh; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 中国狮子犬	zhong;kl;ll;aa,ka;op;ll;dg;k,kh;aa; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; shi;qj;qj;qu;by;kb;mr;qt;qj; zi;la;va;aa,vh;aa;nd;hi;bb;va; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 中国无毛犬	zhong;kl;ll;aa,ka;op;ll;dg;k,kh;aa; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; wu;ay;ay;ag,ay,ee;uk,ur;mu;du;fq;av; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-仓鼠	cang;rv;rv;re;et;ou;jz;wb;rv; shu;jv;jv;ju;sr;hv;ps;vn;jv;	145661
-鹿鹿	lu;gb;gb;gb,lb;ra;ip;xl;yn;gb; lu;gb;gb;gb,lb;ra;ip;xl;yn;gb;	67571
-猛虎	meng;qm;qm;qm;bd,ba;kt;ma;qt;qm; hu;hj;hj;hj;pi;yn,yu;zh;ha;aj;	132756
-兔兔	tu;dd;dd;dd;gh;ni;wt;qk;ed; tu;dd;dd;dd;gh;ni;wt;qk;ed;	127168
+仓鼠	cang;rv;rv;re;et;ou;jz;wb;rv; shu;jv;jv;ju;sr;hv;ps;vn;jv;	322016
+鹿鹿	lu;gb;gb;gb,lb;ra;ip;xl;yn;gb; lu;gb;gb;gb,lb;ra;ip;xl;yn;gb;	211170
+猛虎	meng;qm;qm;qm;bd,ba;kt;ma;qt;qm; hu;hj;hj;hj;pi;yn,yu;zh;ha;aj;	308629
+兔兔	tu;dd;dd;dd;gh;ni;wt;qk;ed; tu;dd;dd;dd;gh;ni;wt;qk;ed;	302423
 白红眼	bai;po;po;pa,po;ss;ha;ub;rr;po; hong;sg;sg;sg;ep;vm;iu;xa;sg; yan;og;og;og;sh;bv;qi;hv;mh;	0
-白化	bai;po;po;pa,po;ss;ha;ub;rr;po; hua;rb;rb;rb;xa;op;jv;wx;rb;	117373
+白化	bai;po;po;pa,po;ss;ha;ub;rr;po; hua;rb;rb;rb;xa;op;jv;wx;rb;	290856
 白化蛋白石基因	bai;po;po;pa,po;ss;ha;ub;rr;po; hua;rb;rb;rb;xa;op;jv;wx;rb; dan;zi;vi;ip,pi;rf;ni;tc;nh;vi; bai;po;po;pa,po;ss;ha;ub;rr;po; shi;ak;ak;kp,aa,ak,pk;tt;mr;ms;dg;ak; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
-彩虹	cai;cp;pp;pc;hu;bh;ye;es;pp; hong;ig;ig;ig;fp;lm;cu;ja;ig;	167456
+彩虹	cai;cp;pp;pc;hu;bh;ye;es;pp; hong;ig;ig;ig;fp;lm;cu;ja;ig;	342139
 彩狸	cai;cp;pp;pc;hu;bh;ye;es;pp; li;ql;ql;ql;bg;kg;md;qt;ql;	0
 蛋白石基因	dan;zi;vi;ip,pi;rf;ni;tc;nh;vi; bai;po;po;pa,po;ss;ha;ub;rr;po; shi;ak;ak;kp,aa,ak,pk;tt;mr;ms;dg;ak; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 蛋白石肉桂基因	dan;zi;vi;ip,pi;rf;ni;tc;nh;vi; bai;po;po;pa,po;ss;ha;ub;rr;po; shi;ak;ak;kp,aa,ak,pk;tt;mr;ms;dg;ak; rou;nr;nr;ad,kr;oe;oo;mj;mw;nr; gui;mt;mt;mg;wg;dg;eg;sf;lt; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 淡雅彩虹	dan;dh;dh;dy;kt;ef;kc;io;dh; ya;yv;yf;vy,yv;da;mg;lu;ah;ya; cai;cp;pp;pc;hu;bh;ye;es;pp; hong;ig;ig;ig;fp;lm;cu;ja;ig;	0
 非黄脸蓝系	fei;ls;la;aa;pu,up;ly;rf;dj;aa; huang;cb;cb;ad,cb;zf;tc;nh;am;cb; lian;oq;oa;oa,oq;ld;bm;vf;ew;oa; lan;cm;cm;cj;zd,za;tt;la;aj;cm; xi;px;px;ps;uf;hf;ti;tx;px;	0
-冠羽	guan;bc;bc;bc;ik;bi;wk;pf;gc; yu;xx;xx;xx;dd;sm;zv;nn;xx;	49563
-华乐	hua;ru;ru;uh;xs;oj;jn;wx;ru; le;px;pd;pd,px;uf;hd;by;qi;pd;	56051
+冠羽	guan;bc;bc;bc;ik;bi;wk;pf;gc; yu;xx;xx;xx;dd;sm;zv;nn;xx;	166443
+华乐	hua;ru;ru;uh;xs;oj;jn;wx;ru; le;px;pd;pd,px;uf;hd;by;qi;pd;	184196
 华乐蛋白石基因	hua;ru;ru;uh;xs;oj;jn;wx;ru; le;px;pd;pd,px;uf;hd;by;qi;pd; dan;zi;vi;ip,pi;rf;ni;tc;nh;vi; bai;po;po;pa,po;ss;ha;ub;rr;po; shi;ak;ak;kp,aa,ak,pk;tt;mr;ms;dg;ak; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 华乐基因	hua;ru;ru;uh;xs;oj;jn;wx;ru; le;px;pd;pd,px;uf;hd;by;qi;pd; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
-黄脸	huang;cb;cb;ad,cb;zf;tc;nh;am;cb; lian;oq;oa;oa,oq;ld;bm;vf;ew;oa;	68671
+黄脸	huang;cb;cb;ad,cb;zf;tc;nh;am;cb; lian;oq;oa;oa,oq;ld;bm;vf;ew;oa;	213500
 黄绿灰翅	huang;cb;cb;ad,cb;zf;tc;nh;am;cb; lv;su;su;sl;eo,ef;ve;ik;xv;su; hui;uh;uh;hu,uh;dt,st;kf;nc;do;ah; chi;vx;ux;vy,yv;sd;jm;cz;fc;ux;	0
 灰翅蛋白石基因	hui;uh;uh;hu,uh;dt,st;kf;nc;do;ah; chi;vx;ux;vy,yv;sd;jm;cz;fc;ux; dan;zi;vi;ip,pi;rf;ni;tc;nh;vi; bai;po;po;pa,po;ss;ha;ub;rr;po; shi;ak;ak;kp,aa,ak,pk;tt;mr;ms;dg;ak; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 灰翅基因	hui;uh;uh;hu,uh;dt,st;kf;nc;do;ah; chi;vx;ux;vy,yv;sd;jm;cz;fc;ux; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 灰翅肉桂基因	hui;uh;uh;hu,uh;dt,st;kf;nc;do;ah; chi;vx;ux;vy,yv;sd;jm;cz;fc;ux; rou;nr;nr;ad,kr;oe;oo;mj;mw;nr; gui;mt;mt;mg;wg;dg;eg;sf;lt; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
-肉桂	rou;nr;nr;ad,kr;oe;oo;mj;mw;nr; gui;mt;mt;mg;wg;dg;eg;sf;lt;	139524
+肉桂	rou;nr;nr;ad,kr;oe;oo;mj;mw;nr; gui;mt;mt;mg;wg;dg;eg;sf;lt;	315804
 肉桂蛋白石基因	rou;nr;nr;ad,kr;oe;oo;mj;mw;nr; gui;mt;mt;mg;wg;dg;eg;sf;lt; dan;zi;vi;ip,pi;rf;ni;tc;nh;vi; bai;po;po;pa,po;ss;ha;ub;rr;po; shi;ak;ak;kp,aa,ak,pk;tt;mr;ms;dg;ak; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 肉桂隐派基因	rou;nr;nr;ad,kr;oe;oo;mj;mw;nr; gui;mt;mt;mg;wg;dg;eg;sf;lt; yin;ex;ex;ej;bn;np;th;bq;ex; pai;dy;dn;dp;kh;ev;kt;ir;dh; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
 天空蓝灰翅	tian;ad;ad;ad;ue;mk;fm;gd;ad; kong;bg;bg;xg,bg;ip;jm;eu;pw;gg; lan;cm;cm;cj;zd,za;tt;la;aj;cm; hui;uh;uh;hu,uh;dt,st;kf;nc;do;ah; chi;vx;ux;vy,yv;sd;jm;cz;fc;ux;	0
 隐派基因	yin;ex;ex;ej;bn;np;th;bq;ex; pai;dy;dn;dp;kh;ev;kt;ir;dh; ji;ct;qt;tq,qt;vg;tg;zg;ad;qt; yin;kd;kd;kd;nx;wk;rm;ld;wd;	0
-鱼鳞	yu;da;da;da;qq;nm;wv;qg;ea; lin;yf;al;yl;qp;nq;wv;qg;ea;	118104
+鱼鳞	yu;da;da;da;qq;nm;wv;qg;ea; lin;yf;al;yl;qp;nq;wv;qg;ea;	291752
 原始蓝	yuan;ix;ix;ix;rf;mf;xy;dr;ix; shi;nk;nk;nt;yo;vr;bd;vc;nk; lan;cm;cm;cj;zd,za;tt;la;aj;cm;	0
 原始绿	yuan;ix;ix;ix;rf;mf;xy;dr;ix; shi;nk;nk;nt;yo;vr;bd;vc;nk; lv;su;su;sl;eo,ef;ve;ik;xv;su;	0
-珍珠	zhen;wp;wp;wp;au;mh;ne;gw;wp; zhu;ww;wv;wv;ae;md;na;gr;wv;	163497
+珍珠	zhen;wp;wp;wp;au;mh;ne;gw;wp; zhu;ww;wv;wv;ae;md;na;gr;wv;	338686
 边境牧羊犬	bian;zl;zl;zl;uq;ys;su;lp;zl; jing;te;te;tj;gk;gu;gp;fu;te; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 凯利蓝梗	kai;uj;ej;jj,jq;pi;un;vo;mn;sj; li;hd;hd;hd,dh;ui;hn;xp;tj;hd; lan;cm;cm;cj;zd,za;tt;la;aj;cm; geng;mg;mg;mg;wy,wh;dk;eb;sg;lg;	0
 可蒙犬	ke;dk;dk;dk;jj,jo;mr;zk;sk;av; meng;cu;cu,cn;cm,cu;zh;to;lj;ap;cn; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
@@ -269,7 +269,7 @@ use_preset_vocabulary: true
 日本银狐	ri;ka;ka;aa,or,ri;vv;aa;or;jj;wa; ben;ma;aa;aa,ma;wd;dm;ef;sg;aa; yin;jg;jg;jg;dh;ov;zi;qv;jh; hu;qg;qg;qg;bh;ko;my;qt;qg;	0
 萨摩耶犬	sa;ci;ci;ci;zu,zr;th;lx;ab;ci; mo;gu;gu;mu,um;do,dp,rp;iq;zu;ys;gu; ye;ee;ee;ee;db;sl;qt;bb;ee; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 英国古代牧羊犬	ying;cy;cy;cy;zx,ze;tk;lm;am;cy; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; gu;uk;uk;uk;so;jr;cg;dg;uk; dai;ry;ry;ry;xa,xh;op;jp;wa;rg; mu;nw;nw;nw;bj;hk;qh;tr;nw; yang;bf;bl;da;fp;tq;gy;ud;ea; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-藏獒	zang;ci;ci;cg,ci;zh;ts;lq;ad;cg; ao;fq;fq;qa,qw;ab,ah;gk,qk;am;gq;aq;	120492
+藏獒	zang;ci;ci;cg,ci;zh;ts;lq;ad;cg; ao;fq;fq;qa,qw;ab,ah;gk,qk;am;gq;aq;	294641
 暗脉菜粉蝶	an;oo;oo;oy;vc,vv;aa;ox;ju;oo; mai;oy;oy;oy;lh,lo;be;vk;ey;oy; cai;cc;cm;cc;zw;td;le;ae;cl; fen;mf;md;mf;li,lu;fh;pp;ow;md; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 巴黎翠凤蝶	ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; li;hu;hu;hu,ur;uo,uf;he;xk;tq;hu; cui;xu;xu;yz;ds;sj;zn;ny;xu; feng;jy;jy;jy;il;he;or;mc;jy; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 白带凤蝶	bai;po;po;pa,po;ss;ha;ub;rr;po; dai;cj;fj;jb;zy;tb;lr;gk;aj; feng;jy;jy;jy;il;he;or;mc;jy; die;im;im;im,iy;fw;ld;ce;ja;il;	0
@@ -311,7 +311,7 @@ use_preset_vocabulary: true
 峨眉大弄蝶	e;uw;ew;uw;pa;ui;vp;mt;sg; mei;uo;vo;om,uo;rs,qs;au;cq;nh;vm; da;ar;un;ad;xx;kk;md;dd;an; nong;wc;wc;cw,wc;ap,az;mt;nl;ga;wa; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 二尾蛱蝶	er;aa;aa;aa;uu;mm;me;fg;aa; wei;um;um;um;qr,qa;su;cv;nt;um; jia;ij;ij;ij;fx;lt;ch;jg;ij; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 飞龙粉蝶	fei;vd;vd;yd;rh;no,xo;cf;nu;vd; long;yp;ud;ad;sh,dh;ip;tl;dx;ab; fen;mf;md;mf;li,lu;fh;pp;ow;md; die;im;im;im,iy;fw;ld;ce;ja;il;	0
-凤蝶	feng;jy;jy;jy;il;he;or;mc;jy; die;im;im;im,iy;fw;ld;ce;ja;il;	62538
+凤蝶	feng;jy;jy;jy;il;he;or;mc;jy; die;im;im;im,iy;fw;ld;ce;ja;il;	200000
 凤尾青凤蝶	feng;jy;jy;jy;il;he;or;mc;jy; wei;um;um;um;qr,qa;su;cv;nt;um; qing;fo;fo;of,fo;al;qb;av;ge;ao; feng;jy;jy;jy;il;he;or;mc;jy; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 凤眼方环蝶	feng;jy;jy;jy;il;he;or;mc;jy; yan;og;og;og;sh;bv;qi;hv;mh; fang;wv;dw;dg,wd,dp,dw;ff;ys;lf;yy;wp; huan;wb;wb;wb;ah,af;mf;nc;gg;wb; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 柑橘凤蝶	gan;mg;mg;mg;wv;dm;ez;sa;lg; ju;mk;mk;mk,my;wo;db;ed;sc;lk; feng;jy;jy;jy;il;he;or;mc;jy; die;im;im;im,iy;fw;ld;ce;ja;il;	0
@@ -454,39 +454,39 @@ use_preset_vocabulary: true
 棕脉粉蝶	zong;mu;mx;mz;wf;df;ef;sp;lx; mai;oy;oy;oy;lh,lo;be;vk;ey;oy; fen;mf;md;mf;li,lu;fh;pp;ow;md; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 阿拉斯加马拉密犬	a;ek;ek;ek;bj,bo;nr;tz;bs;ek; la;fl;fl;fl;jb;qt;ui;ru;fl; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk; ma;va;va;aa,vh;zz;nm;nm;cn;va; la;fl;fl;fl;jb;qt;ui;ru;fl; mi;bu;be;ub,bu;ip;ju;wv;pn;gs; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 阿拉斯加马拉缪特犬	a;ek;ek;ek;bj,bo;nr;tz;bs;ek; la;fl;fl;fl;jb;qt;ui;ru;fl; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk; ma;va;va;aa,vh;zz;nm;nm;cn;va; la;fl;fl;fl;jb;qt;ui;ru;fl; miu;sp;sp;sl,sp;eu;vh;ie;xn;sp; te;nc;nc;ns;bk;hi;qk;tr;nc; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-大型犬	da;ar;un;ad;xx;kk;md;dd;an; xing;kt;kt;tx;ug;mg;fg;ga;kt; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	92720
+大型犬	da;ar;un;ad;xx;kk;md;dd;an; xing;kt;kt;tx;ug;mg;fg;ga;kt; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	256831
 短毛阿拉斯加	duan;ub;ua;ud;ed;ot;oz;td;ud; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; a;ek;ek;ek;bj,bo;nr;tz;bs;ek; la;fl;fl;fl;jb;qt;ui;ru;fl; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk;	0
 短毛阿拉斯加雪橇犬	duan;ub;ua;ud;ed;ot;oz;td;ud; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; a;ek;ek;ek;bj,bo;nr;tz;bs;ek; la;fl;fl;fl;jb;qt;ui;ru;fl; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk; xue;ye;ye;yx;ys;mm;tb;fv;ya; qiao;mm;mm;mm,mc;wr,wa;du;ev;st;lm; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
 短毛标准阿拉斯加	duan;ub;ua;ud;ed;ot;oz;td;ud; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; biao;mu;mx;mu;wf;df;ef;sf;lx; zhun;dv;df;dv;fa;ig;wu;uw;da; a;ek;ek;ek;bj,bo;nr;tz;bs;ek; la;fl;fl;fl;jb;qt;ui;ru;fl; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk;	0
 短毛正常毛质阿拉斯加	duan;ub;ua;ud;ed;ot;oz;td;ud; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; zheng;av;av;av;dr;mm;fs;gh;av; chang;xj;xj;jk,xd,dd;hy;fb;sr;ip;ej; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; zhi;ib;pr;bu,pb;um,rm;ho;xo;rf;pr; a;ek;ek;ek;bj,bo;nr;tz;bs;ek; la;fl;fl;fl;jb;qt;ui;ru;fl; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk;	0
 福犬	fu;pt;pt;uf,ut;hw;iw;fq;py;pt; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	0
-雪橇犬	xue;ye;ye;yx;ys;mm;tb;fv;ya; qiao;mm;mm;mm,mc;wr,wa;du;ev;st;lm; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	67571
+雪橇犬	xue;ye;ye;yx;ys;mm;tb;fv;ya; qiao;mm;mm;mm,mc;wr,wa;du;ev;st;lm; quan;dd;dd;dd,ad;bb,xh;ik;mq;dg;dd;	211170
 单环蛱蝶	dan;bu;bl;ba,bd;fs;cj;hn;uj;ea; huan;wb;wb;wb;ah,af;mf;nc;gg;wb; jia;ij;ij;ij;fx;lt;ch;jg;ij; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 黑弄蝶	hei;lh;lh;ad,ha;nn;wf;ph;lf;ae; nong;wc;wc;cw,wc;ap,az;mt;nl;ga;wa; die;im;im;im,iy;fw;ld;ce;ja;il;	0
-蛱蝶	jia;ij;ij;ij;fx;lt;ch;jg;ij; die;im;im;im,iy;fw;ld;ce;ja;il;	56051
+蛱蝶	jia;ij;ij;ij;fx;lt;ch;jg;ij; die;im;im;im,iy;fw;ld;ce;ja;il;	184196
 双环蛱蝶	shuang;yy;yy;yy;ll;ee,xe;rr;cc;yy; huan;wb;wb;wb;ah,af;mf;nc;gg;wb; jia;ij;ij;ij;fx;lt;ch;jg;ij; die;im;im;im,iy;fw;ld;ce;ja;il;	0
 眼碟	yan;og;og;og;sh;bv;qi;hv;mh; die;um;um;um,uy;tw;md;me;da;ul;	0
 奥西猫	ao;pd;pd;dm,pd;ux;hk,xk;tm;tm;pd; xi;ak,wk;aa;aa;pp;mw;vx;sg;aa; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 巴厘猫	ba;sl;sl,vv;ag,kg,vg;tt;au;mb;cn;vv; li;il;il;il;rg;mg;xd;dj;il; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 伯曼猫	bo;rb;rb;rb;xs;oa;ju;wr;rb; man;oy;oy;oy;vl;ae;or;jl;oy; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-波斯猫	bo;dp;dy;dp;kl;ee;kr;ih;dy; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; mao;qt;qt;qm;bw;kw;mq;qt;qt;	92347
-布偶猫	bu;uj;uj;ju,uj;sy,dy;kb;nr;dm;aj; ou;rd;ry;ry;xh;ob;jv;wj;rd; mao;qt;qt;qm;bw;kw;mq;qt;qt;	75950
-田园猫	tian;ku;ku;aa;ww;ww;qt;ll;wu; yuan;ky;ke;ky;nk;wu;rp;lf;we; mao;qt;qt;qm;bw;kw;mq;qt;qt;	59527
+波斯猫	bo;dp;dy;dp;kl;ee;kr;ih;dy; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; mao;qt;qt;qm;bw;kw;mq;qt;qt;	256249
+布偶猫	bu;uj;uj;ju,uj;sy,dy;kb;nr;dm;aj; ou;rd;ry;ry;xh;ob;jv;wj;rd; mao;qt;qt;qm;bw;kw;mq;qt;qt;	228039
+田园猫	tian;ku;ku;aa;ww;ww;qt;ll;wu; yuan;ky;ke;ky;nk;wu;rp;lf;we; mao;qt;qt;qm;bw;kw;mq;qt;qt;	192879
 电烫卷猫	dian;ov,yv;lv;ag,og;ee,ve;lu;oa;jn;av; tang;dh;dh;ht;kt;ef,xf;kc;in;dh; juan;jv;jv;ef,je;ft;fu;hz;ud;dv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 东方短毛猫	dong;ax;ad;ad,qx;df,af;kd;ry;ai;ad; fang;wv;dw;dg,wd,dp,dw;ff;ys;lf;yy;wp; duan;ub;ua;ud;ed;ot;oz;td;ud; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 东奇尼猫	dong;ax;ad;ad,qx;df,af;kd;ry;ai;ad; qi;dk;dk;dk;xj,xo;kr;mz;ds;dk; ni;ub;ub;ub;qa;sp;cv;nx;ub; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 哈瓦那棕猫	ha;kk;kk;kh;oo;rr;dd;kw;kk; wa;ad;ad;ad;dh;mi;rw;gn;ad; na;ve;ve;el;rb;sl;at;vf;ve; zong;mu;mx;mz;wf;df;ef;sp;lx; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-无毛猫	wu;ay;ay;ag,ay,ee;uk,ur;mu;du;fq;av; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	57856
+无毛猫	wu;ay;ay;ag,ay,ee;uk,ur;mu;du;fq;av; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	188770
 科拉特猫	ke;hd;hu;hd;uh,us;hj;xj;tu;hu; la;fl;fl;fl;jb;qt;ui;ru;fl; te;nc;nc;ns;bk;hi;qk;tr;nc; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 柯尼斯卷毛猫	ke;mk;mk;mk;wj,wo;dr;ez;ss;lk; ni;ub;ub;ub;qa;sp;cv;nx;ub; si;cj;qj;jq,qj;vp;tl;zt;ad;qj; juan;jv;jv;ef,je;ft;fu;hz;ud;dv; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-狸猫	li;ql;ql;ql;bg;kg;md;qt;ql; mao;qt;qt;qm;bw;kw;mq;qt;qt;	112247
-狸花猫	li;ql;ql;ql;bg;kg;md;qt;ql; hua;cb;cb;ch;za;tp;lv;aw;cb; mao;qt;qt;qm;bw;kw;mq;qt;qt;	76715
+狸猫	li;ql;ql;ql;bg;kg;md;qt;ql; mao;qt;qt;qm;bw;kw;mq;qt;qt;	284412
+狸花猫	li;ql;ql;ql;bg;kg;md;qt;ql; hua;cb;cb;ch;za;tp;lv;aw;cb; mao;qt;qt;qm;bw;kw;mq;qt;qt;	229486
 曼岛无尾猫	man;oy;oy;oy;vl;ae;or;jl;oy; dao;nu;pe;nu,un;up;pu;xv;qy;ps; wu;ay;ay;ag,ay,ee;uk,ur;mu;du;fq;av; wei;um;um;um;qr,qa;su;cv;nt;um; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 美国短尾猫	mei;yd;yd;dy,yd;fx;tk;gm;ug;ed; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; duan;ub;ua;ud;ed;ot;oz;td;ud; wei;um;um;um;qr,qa;su;cv;nt;um; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 美国卷耳猫	mei;yd;yd;dy,yd;fx;tk;gm;ug;ed; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; juan;jv;jv;ef,je;ft;fu;hz;ud;dv; er;ol;aa;aa;dd,du;sj;qe;bg;aa; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 美国硬毛猫	mei;yd;yd;dy,yd;fx;tk;gm;ug;ed; guo;ky;ky;ky;na,nh;wi;ri;l,lg;wy; ying;ug;ug;ug;ty,th;mk;mb;dg;ug; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 缅甸猫	mian;sm;sm;sm;ed,eu;vl;ib;xd;sm; dian;bt;bt;gt,tg;uw;pw;nq;ql;pt; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-缅因猫	mian;sm;sm;sm;ed,eu;vl;ib;xd;sm; yin;kd;kd;kd;nx;wk;rm;ld;wd; mao;qt;qt;qm;bw;kw;mq;qt;qt;	65195
+缅因猫	mian;sm;sm;sm;ed,eu;vl;ib;xd;sm; yin;kd;kd;kd;nx;wk;rm;ld;wd; mao;qt;qt;qm;bw;kw;mq;qt;qt;	206004
 日本短尾猫	ri;ka;ka;aa,or,ri;vv;aa;or;jj;wa; ben;ma;aa;aa,ma;wd;dm;ef;sg;aa; duan;ub;ua;ud;ed;ot;oz;td;ud; wei;um;um;um;qr,qa;su;cv;nt;um; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 山东狮子猫	shan;kl;lk;aa;pp;uu;vs;mm;aa; dong;ax;ad;ad,qx;df,af;kd;ry;ai;ad; shi;qj;qj;qu;by;kb;mr;qt;qj; zi;la;va;aa,vh;aa;nd;hi;bb;va; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 四川简州猫	si;ke;ke;aa,ke;nk;wc;ys;lh;we; chuan;pl;pl;pa;up;ll;oc;kt;pa; jian;vo;vo;vj;nv;ha;ro;tu;vo; zhou;dl;dl;id,da;hp;il;oo;yt;da; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
@@ -494,10 +494,10 @@ use_preset_vocabulary: true
 索马里猫	suo;ux;ux;sb,us;sf;jf;ni;fp;ux; ma;va;va;aa,vh;zz;nm;nm;cn;va; li;tt;la;aa,tt;vg;wg;dl;jf;aa; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 土耳其梵猫	tu;ua;ua;aa;gg;gg;gt;ff;ua; er;ol;aa;aa;dd,du;sj;qe;bg;aa; qi;cb;qb;ba,ad,hb;vf;tc;zh;ad;ab; fan;mf;mf;fl,mf;wh;di;ei;ss;lf; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
 夏特尔猫	xia;bw;aw;wz,aw;dj;me;fh;dh;aw; te;nc;nc;ns;bk;hi;qk;tr;nc; er;dx;dx;dx,xd;gf;nf;xy;qi;ex; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-暹罗猫	xian;zv;zf;zv;vq;yg;ou;jw;za; luo;sx;sx;sx;af;wi;yl;lq;sx; mao;qt;qt;qm;bw;kw;mq;qt;qt;	71683
+暹罗猫	xian;zv;zf;zv;vq;yg;ou;jw;za; luo;sx;sx;sx;af;wi;yl;lq;sx; mao;qt;qt;qm;bw;kw;mq;qt;qt;	219695
 新加坡猫	xin;lj;lj;jq;bp;yl;it;us;lj; jia;lk;lk;lk,kl;uo;kr;sd;lk;lk; po;tp;ty;tp;gl;ge;gr;fh;ty; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-云猫	yun;ag,es;es;es,se;up;mi;by;fc;ev; mao;qt;qt;qm;bw;kw;mq;qt;qt;	77455
+云猫	yun;ag,es;es;es,se;up;mi;by;fc;ev; mao;qt;qt;qm;bw;kw;mq;qt;qt;	230871
 重点色短毛猫	zhong;ql;pa;pa,ql;sg;hg;ld;tg;pa; dian;vh;lh;hv;pn;yf,xf;yc;hk;ve; se;db;db;db;gt;nu;xm;qc;eb; duan;ub;ua;ud;ed;ot;oz;td;ud; mao;pv;pv;pg;ur,ua;hu;vm;tf;pv; mao;qt;qt;qm;bw;kw;mq;qt;qt;	0
-银渐层	yin;jg;jg;jg;dh;ov;zi;qv;jh; jian;dj;dj;dv;kp;el;kt;il;dj; ceng;uy;us;uy;qp;si;cb;nf;uv;	56051
+银渐层	yin;jg;jg;jg;dh;ov;zi;qv;jh; jian;dj;dj;dv;kp;el;kt;il;dj; ceng;uy;us;uy;qp;si;cb;nf;uv;	184196
 黑渐层	hei;lh;lh;ad,ha;nn;wf;ph;lf;ae; jian;dj;dj;dv;kp;el;kt;il;dj; ceng;uy;us;uy;qp;si;cb;nf;uv;	0
 白渐层	bai;po;po;pa,po;ss;ha;ub;rr;po; jian;dj;dj;dv;kp;el;kt;il;dj; ceng;uy;us;uy;qp;si;cb;nf;uv;	0

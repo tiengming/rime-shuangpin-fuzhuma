@@ -8,10 +8,10 @@ version: "1.0"
 sort: by_weight
 use_preset_vocabulary: false
 ...
-完读	wan;by;be;by;ik;ju;wp;pf;ge; du;yd;yd;ym;ce,cx;ik;sm;yf;yd;	40418
-完播	wan;by;be;by;ik;ju;wp;pf;ge; bo;ft;ft;ff;jw;qw;uq;rt;ft;	77455
-完播率	wan;by;be;by;ik;ju;wp;pf;ge; bo;ft;ft;ff;jw;qw;uq;rt;ft; lv;wu;wu;wu;is;yj;zn;yx;wu;	103867
-橙瓜	cheng;mb;ma;md;wd;dt;ez;sw;ld; gua;in,vd;pn;pd;uh;ho;yg;rc;pn;	78864
-飞卢	fei;vd;vd;yd;rh;no,xo;cf;nu;vd; lu;bu;lu;bu;pq;ys;yc;hn;au;	122553
-七猫	qi;av;av;ag;aa;ju;rq;ag;av; mao;qt;qt;qm;bw;kw;mq;qt;qt;	85859
-橙光	cheng;mb;ma;md;wd;dt;ez;sw;ld; guang;xe;xw;ea,xw;hk;fu;mg;iq;ee;	141816
+完读	wan;by;be;by;ik;ju;wp;pf;ge; du;yd;yd;ym;ce,cx;ik;sm;yf;yd;	137008
+完播	wan;by;be;by;ik;ju;wp;pf;ge; bo;ft;ft;ff;jw;qw;uq;rt;ft;	230871
+完播率	wan;by;be;by;ik;ju;wp;pf;ge; bo;ft;ft;ff;jw;qw;uq;rt;ft; lv;wu;wu;wu;is;yj;zn;yx;wu;	273214
+橙瓜	cheng;mb;ma;md;wd;dt;ez;sw;ld; gua;in,vd;pn;pd;uh;ho;yg;rc;pn;	233473
+飞卢	fei;vd;vd;yd;rh;no,xo;cf;nu;vd; lu;bu;lu;bu;pq;ys;yc;hn;au;	297088
+七猫	qi;av;av;ag;aa;ju;rq;ag;av; mao;qt;qt;qm;bw;kw;mq;qt;qt;	245737
+橙光	cheng;mb;ma;md;wd;dt;ez;sw;ld; guang;xe;xw;ea,xw;hk;fu;mg;iq;ee;	318156
