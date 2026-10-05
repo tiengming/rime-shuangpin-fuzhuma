@@ -37,24 +37,40 @@ switches:
   - name: ascii_punct
     reset: 0
     states: ["¥", "$"]
-# ac 保留为“显式强制造词”后备入口；日常使用不需要它。
-add_user_dict:
-  comment_format:
-    - "xform/(^|[ '])[^[]+[[]/$1/"
+user_dict_set:
   dictionary: moqi_wan.extended
-  db_class: tabledb
-  enable_charset_filter: false
-  enable_completion: true
-  enable_encoder: true
-  enable_sentence: true
-  enable_user_dict: true
-  encode_commit_history: false
-  initial_quality: "-1"
-  prefix: ac
-  prism: moqi_wan_flypymo
-  tag: add_user_dict
-  tips: "〔自造词〕"
+  initial_quality: 0
+  enable_completion: false
+  enable_sentence: false
+  ##  默认为不超过 2 个字的候选项显示输入码；将 2 改为 0 可关闭编码提示，
+  ##  改为 1 则是只显示单字的输入码，依此类推。
+  spelling_hints: 1
+  comment_format:
+    - "xform/(^|[ '])[^[]+[[]/$1/" ## 编码提示只显示辅助码部分
+  enable_user_dict: true # 是否开启自动调频
   user_dict: user.custom.dict
+  db_class: tabledb
+  prism: moqi_personal_flypymo
+# 自定义词典加词(ac引导)
+add_user_dict:
+  tag: add_user_dict
+  dictionary: moqi_wan.extended
+  initial_quality: -1
+  user_dict: user.custom.dict
+# ↓ 用户词典格式，tabledb（文本） 或 userdb （二进制）。
+  db_class: tabledb
+  enable_charset_filter: false # 是否开启字符集过滤
+  enable_completion: true # 提前显示尚未输入完整码的字〔仅 table_translator 有效〕
+  enable_encoder: true # 是否开启自动造词〔仅 table_translator 有效〕
+  enable_sentence: true #  是否开启自动造句
+  enable_user_dict: true # 是否开启用户词典
+  encode_commit_history: false # 是否对已上屛词自动成词〔仅 table_translator 有效〕
+  preedit_format:
+  prism: moqi_personal_flypymo  
+  comment_format:
+    - "xform/(^|[ '])[^[]+[[]/$1/" ## 编码提示只显示辅助码部分
+  prefix: "ac"
+  tips: "〔自造词〕"
 
 calculator:
   trigger: V
@@ -206,38 +222,63 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
+      # lua翻译器
+    - lua_translator@*date_translator    # 时间、日期、星期
+    - lua_translator@*lunar              # 农历
+    - lua_translator@*unicode            # Unicode
+    - lua_translator@*card_number
+    - lua_translator@*number_translator  # 数字、金额大写
+    - lua_translator@*calculator    # 计算器
     - punct_translator
-    - "table_translator@custom_phrase"
-    - "table_translator@custom_phrase_3_code"
-    - "table_translator@custom_phrase_super_3jian_no_conflict"
-    - "table_translator@custom_phrase_super_4jian_no_conflict"
-    - "table_translator@custom_phrase_super_1jian"
-    - "table_translator@custom_phrase_super_2jian"
-    - "table_translator@custom_phrase_super_3jian"
-    - "table_translator@custom_phrase_kf"
-    - "table_translator@custom_phrase_mqzg"
-    - "lua_translator@*date_translator"
-    - "lua_translator@*lunar"
-    - "lua_translator@*unicode"
-    - "lua_translator@*card_number"
-    - "lua_translator@*number_translator"
-    - "lua_translator@*calculator"
-    - "table_translator@add_user_dict"
-    - "table_translator@emojis"
-    - "table_translator@easy_en_simp"
-    - "script_translator@reverse_moqima"
-    - "table_translator@radical_flypy"
-    - "table_translator@reverse_stroke"
+    # 码表翻译器 用于仓颉、五笔等基于码表的输入方案
+    - table_translator@custom_phrase # 1、2码置顶
+    - table_translator@custom_phrase_3_code # 3码出简让全
+    - table_translator@custom_phrase_kf # 快符
+    - table_translator@custom_phrase_mqzg # 字根
+    - table_translator@custom_phrase_super_1jian # 1、2、3码时的tab上屏词
+    - table_translator@custom_phrase_super_2jian
+    - table_translator@custom_phrase_super_3jian
+    - table_translator@custom_phrase_super_3jian_no_conflict
+    - table_translator@custom_phrase_super_4jian_no_conflict
+    - table_translator@emojis ## 添加注释后：停用ae模式emoji输入
+    - table_translator@easy_en_simp ## 添加注释后：停用单词输入
+    - table_translator@jp_sela ## 添加注释后：停用日语输入
+    # 反查翻译器
+    - reverse_lookup_translator
+    - table_translator@reverse_moqima
+    - table_translator@radical_flypy
+    - table_translator@reverse_stroke
+    - table_translator@reverse_zrlf
+    - table_translator@reverse_cj
+    # 脚本翻译器，用于拼音、粤拼等基于音节表的输入方案
     - script_translator
-    - "script_translator@add_user_dict"
+    - script_translator@user_dict_set
+    - script_translator@add_user_dict
 grammar:
   language: "zh-moqi"
-  collocation_max_length: 5
-  collocation_min_length: 2
-  collocation_penalty: -10
-  non_collocation_penalty: -20
-  weak_collocation_penalty: -35
-  rear_penalty: -12
+  non_collocation_penalty: -4
+octagram:
+  disable:
+    __patch:
+      grammar: {}
+  enable_for_sentence:
+    __patch:
+      grammar:
+        # language: fcitx-zh-hans # 小企鹅模型
+        # language: zh-hans-t-huayu-v7-bgw # 华宇模型
+        # language: zh-hans-wiki-202405 # 维基模型
+        # language: zh-hans-t-essay-bgw # rime官方模型
+        language: zh-moqi # 墨奇训练的模型 聊胜于无 主要目的是让non_collocation_penalty生效
+        # collocation_max_length: 5
+        # collocation_min_length: 2
+        non_collocation_penalty: -4
+        # collocation_penalty: -4
+        # weak_collocation_penalty: -12
+        # rear_penalty: -18
+      translator/contextual_suggestions: true # 是否使用语言模型优化输出结果〔需配合 grammar 使用〕
+      translator/max_sentences: 3
+      translator/max_homophones: 4 # 最大同音簇长度〔需配合 grammar 使用〕
+      translator/max_homographs: 2 # 最大同形簇长度〔需配合 grammar 使用〕
 key_binder:
   bindings:
     - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
@@ -719,9 +760,7 @@ translator:
   max_phrase_length: 5
   enable_sentence: false
   initial_quality: 10000
-  max_homographs: 4
-  max_homophones: 8
-  max_sentences: 5
-  prism: moqi_wan_flypymo
+  prism: moqi_personal_flypymo
   spelling_hints: 10
+  preedit_format:
 
