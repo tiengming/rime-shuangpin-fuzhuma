@@ -1,0 +1,88 @@
+name: release
+
+on:
+  release:
+    types: [published]
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate-txt:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'  # 你可以根据需要选择 Python 版本
+
+    - name: generate_rime_all_schema
+      run: |
+        python program/release/generate_moqi_wan_schema.py
+    
+    - name: generate_shouxin_aux.py
+      run: |
+        python program/release/generate_shouxin_aux.py
+
+    - name: generate_fancha_en_jp.py
+      run: |
+        python program/release/generate_fancha_en_jp_schema.py
+
+    - name: Upload rime-moqi-schemas
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      with:
+        asset_path: rime-moqi-schemas.zip
+        asset_name: rime-moqi-schemas.zip
+        asset_content_type: application/zip
+        upload_url: ${{ github.event.release.upload_url }}
+
+    - name: Upload shouxin
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      with:
+        asset_path: shouxin-moqi-aux-code-for-shouxin-input-method.txt
+        asset_name: shouxin-moqi-aux-code-for-shouxin-input-method.txt
+        asset_content_type: text/plain
+        upload_url: ${{ github.event.release.upload_url }}
+
+    - name: Upload rime-fancha
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      with:
+        asset_path: rime-reverse-and-english-and-emoji.zip
+        asset_name: rime-reverse-and-english-and-emoji.zip
+        asset_content_type: application/zip
+        upload_url: ${{ github.event.release.upload_url }}
+
+    - name: Publish nightly release
+      if: github.event_name == 'push'
+      uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: true
+        artifactErrorsFailBuild: true
+        artifacts: rime-moqi-schemas.zip,shouxin-moqi-aux-code-for-shouxin-input-method.txt,rime-reverse-and-english-and-emoji.zip
+        body: |
+          Automated nightly build from `main`.
+
+          Commit: ${{ github.sha }}
+        name: Nightly Build
+        prerelease: true
+        replacesArtifacts: true
+        tag: nightly
