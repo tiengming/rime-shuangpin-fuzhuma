@@ -4,15 +4,15 @@
 #Lua 配置: 超级注释模块
 pro_comment_format:                   # 超级注释，子项配置 true 开启，false 关闭
   fuzhu_code: true                    # 启用辅助码提醒，用于辅助输入练习辅助码，成熟后可关闭
-  candidate_length: 4                 # 候选词辅助码提醒的生效长度，0为关闭  但同时清空其它，应当使用上面开关来处理    
-  fuzhu_type: moqi                     # 用于匹配对应的辅助码注释显示，可选显示类型有：moqi, flypy, zrm, jdh, cj, tiger, wubi,选择一个填入，应与上面辅助码类型一致
+  candidate_length: 1                 # 候选词辅助码提醒的生效长度，0为关闭  但同时清空其它，应当使用上面开关来处理    
+  fuzhu_type: jdh                     # 用于匹配对应的辅助码注释显示，可选显示类型有：moqi, flypy, zrm, jdh, cj, tiger, wubi,选择一个填入，应与上面辅助码类型一致
 
   corrector: true                     # 启用错音错词提醒，例如输入 geiyu 给予 获得 jiyu 提示
   corrector_type: "{comment}"         # 新增一个显示类型，比如"【{comment}】" 
 
 schema:
-  schema_id: moqi_wan_flypymo
-  name: "⚡ 惊鸿·游龙"
+  schema_id: moqi_wan_jdh
+  name: 墨奇+小鹤双拼·简单鹤
   version: "2024-05-11"
   author:
     - gaboolic
@@ -21,9 +21,12 @@ schema:
   dependencies:
     - reverse_moqima
     - radical_flypy
+    - cangjie5
     - stroke
+    - zrlf
     - emoji
     - easy_en
+    - jp_sela
 
 __include: moqi.yaml:/switches_engine
 __include: moqi.yaml:/phrase # 置顶
@@ -57,23 +60,24 @@ translator:
   initial_quality: 10000
   enable_completion: false
   ##  默认为不超过 2 个字的候选项显示输入码；将 2 改为 0 可关闭编码提示，
+  ##  改为 1 则是只显示单字的输入码，依此类推。
   spelling_hints: 10      #将注释以词典字符串形式完全暴露，通过pro_comment_format.lua完全接管，灵活配置。
   comment_format: {comment}  #将注释以词典字符串形式完全暴露，通过pro_comment_format.lua完全接管，灵活配置。
 
-  enable_user_dict: true # 是否开启自动调频
+  enable_user_dict: false # 是否开启自动调频
   preedit_format:
 
 aux_patch:
-  __include: moqi_speller.yaml:/moqi_aux
+  __include: moqi_speller.yaml:/jdh_aux
   __append:
     __include: moqi_speller.yaml:/common_aux
 
 __patch:
   add_user_dict/dictionary: moqi_wan.extended
   user_dict_set/dictionary: moqi_wan.extended
-  translator/prism: moqi_wan_flypymo
-  user_dict_set/prism: moqi_wan_flypymo
-  add_user_dict/prism: moqi_wan_flypymo
+  translator/prism: moqi_wan_jdh
+  user_dict_set/prism: moqi_wan_jdh
+  add_user_dict/prism: moqi_wan_jdh
   speller/algebra/+:
     __include: aux_patch
 
@@ -145,13 +149,4 @@ custom_phrase:
   db_class: stabledb
   enable_completion: false
   enable_sentence: false
-  initial_quality: 100001
-
-# 3码出简让全
-custom_phrase_3_code:
-  dictionary: ""
-  user_dict: custom_phrase/custom_phrase_3_code
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  initial_quality: 100001 #本表词和系统词重码居后
+  initial_quality: 100000

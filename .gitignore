@@ -31,7 +31,6 @@ sync/
 # 用户自定义配置
 *.custom.yaml
 *.custom.*
-!xime.custom.yaml
 program/generate_dict_code/jdh.dict.yaml
 
 # 压缩包
