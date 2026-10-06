@@ -357,7 +357,6 @@ punctuator:
     ",": {commit: "，"}
     "-": "-"
     .: {commit: "。"}
-    "/": {commit: "、"}
     ":": {commit: "："}
     ";": {commit: "；"}
     "<": {commit: "《"}
@@ -598,7 +597,7 @@ recognizer:
     gregorian_to_lunar: "^N[0-9]{1,8}"
     jp_sela: "^aj[a-z]*"
     number: "^R[0-9]+[.]?[0-9]*"
-    punct: "^/([0-9]|10|[A-z]+)$"
+    punct: "^/([0-9]+|[A-Za-z]+)?$"
     radical_flypy: "^az[a-z]*'?$"
     reverse_cj: "^arj[A-Za-z]*$"
     reverse_moqima: "^amq[A-Za-z]*$"
