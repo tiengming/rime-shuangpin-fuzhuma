@@ -8,6 +8,7 @@ metadata:
 
 xime_index:
   base_urls:
+    - "https://xime.wuhx.ccwu.cc/"
     - "https://cdn.jsdelivr.net/gh/ximeiorg/xime-index@master/"
     - "https://fastly.jsdelivr.net/gh/ximeiorg/xime-index@master/"
     - "https://index.ximei.me/"
