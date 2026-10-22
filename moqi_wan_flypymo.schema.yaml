@@ -1,59 +1,5 @@
-add_user_dict:
-  comment_format:
-    - "xform/(^|[ '])[^[]+[[]/$1/"
-  db_class: tabledb
-  dictionary: moqi_wan.extended
-  enable_charset_filter: false
-  enable_completion: true
-  enable_encoder: true
-  enable_sentence: true
-  enable_user_dict: true
-  encode_commit_history: false
-  initial_quality: "-1"
-  prefix: ac
-  prism: moqi_wan_flypymo
-  tag: add_user_dict
-  tips: "〔自造词〕"
-  user_dict: user.custom.dict
-aux_patch:
-  - "xform|^(.{2});(.*?);.*$|$1;$2|"
-  - "xform|^(\\w+?);(.*?);.*$|$1;$2|"
-  - "derive/^(.{2}|\\w+?);.*$/$1/"
-  - "derive/^(.{2}|\\w+?);(\\w)(\\w).*$/$1$2/"
-  - "derive/^(.{2}|\\w+?);(\\w)(\\w).*$/$1[$2/"
-  - "derive/^(.{2}|\\w+?);.*?,(\\w)(\\w).*$/$1$2/"
-  - "derive/^(.{2}|\\w+?);.*?,(\\w)(\\w).*$/$1[$2/"
-  - "abbrev/^(.{2}|\\w+?);(\\w)(\\w).*$/$1$2$3/"
-  - "abbrev/^(.{2}|\\w+?);.*?,(\\w)(\\w).*$/$1$2$3/"
-  - "derive/^(.{2}|\\w+?);(\\w)(\\w).*$/$1$2$3o/"
-  - "derive|^(.{2});(\\w)(\\w).*$|$1$2$3/|"
-  - "derive|^(\\w+?);(\\w)(\\w).*$|$1$2$3/|"
-  - "derive/^(.{2}|\\w+?);.*,(\\w)(\\w).*$/$1$2$3o/"
-  - "derive|^(.{2});.*,(\\w)(\\w).*$|$1$2$3/|"
-  - "derive|^(\\w+?);.*,(\\w)(\\w).*$|$1$2$3/|"
-  - "derive|^(.{2});.*,(\\w)(\\w).*$|$1$2$3/|"
 calculator:
   trigger: V
-chaifen:
-  comment_format:
-    - "xform/\t/ /"
-  opencc_config: moqi_chaifen.json
-  option_name: chaifen
-  show_in_comment: true
-  tips: char
-chaifen_all:
-  comment_format:
-    - "xform/\t/ /"
-  opencc_config: moqi_chaifen_all.json
-  option_name: chaifen_all
-  show_in_comment: true
-  tips: char
-chinese_english:
-  comment_format:
-    - "xform/-/ /"
-  opencc_config: chinese_english.json
-  option_name: chinese_english
-  tips: char
 custom_phrase:
   db_class: stabledb
   dictionary: ""
@@ -61,78 +7,12 @@ custom_phrase:
   enable_sentence: false
   initial_quality: 100001
   user_dict: "custom_phrase/custom_phrase"
-custom_phrase_3_code:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: 100001
-  user_dict: "custom_phrase/custom_phrase_3_code"
-custom_phrase_kf:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_kf"
-custom_phrase_mqzg:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_mqzg"
-custom_phrase_super_1jian:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_super_1jian"
-custom_phrase_super_2jian:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_super_2jian"
-custom_phrase_super_3jian:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_super_3jian"
-custom_phrase_super_3jian_no_conflict:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_super_3jian_no_conflict"
-custom_phrase_super_4jian_no_conflict:
-  db_class: stabledb
-  dictionary: ""
-  enable_completion: false
-  enable_sentence: false
-  initial_quality: "-1"
-  user_dict: "custom_phrase/custom_phrase_super_4jian_no_conflict"
 date_translator:
   date: date
   datetime: datetime
   time: time
   timestamp: timestamp
   week: week
-easy_en_simp:
-  comment_format:
-    - "xform/^.+$//"
-  dictionary: easy_en
-  enable_completion: true
-  enable_sentence: false
-  prefix: aw
-  spelling_hints: 9
-  tag: easy_en_simp
-  tips: "英文单词（可去元音）"
 emoji:
   inherit_comment: false
   opencc_config: emoji.json
@@ -147,23 +27,17 @@ engine:
   filters:
     - "lua_filter@*pro_comment_format"
     - "lua_filter@*aux_lookup_filter"
-    - "lua_filter@*stick"
     - "lua_filter@*is_in_user_dict"
-    - "lua_filter@*moqi.jianma_show"
     - "reverse_lookup_filter@reverse_lookup"
     - "simplifier@emoji"
-    - "simplifier@chaifen"
-    - "simplifier@chaifen_all"
-    - "simplifier@chinese_english"
     - "simplifier@traditionalize"
-    - "simplifier@mars"
     - uniquifier
   processors:
     - ascii_composer
     - recognizer
-    - "lua_processor@*sbxlm.key_binder"
     - key_binder
     - speller
+    - "lua_processor@*url_dot"
     - punctuator
     - selector
     - navigator
@@ -176,13 +50,6 @@ engine:
     - "affix_segmentor@emojis"
     - "affix_segmentor@reverse_moqima"
     - "affix_segmentor@radical_flypy"
-    - "affix_segmentor@reverse_stroke"
-    - "affix_segmentor@reverse_zrlf"
-    - "affix_segmentor@reverse_cj"
-    - "affix_segmentor@add_user_dict"
-    - "affix_segmentor@verbatim"
-    - "affix_segmentor@easy_en_simp"
-    - "affix_segmentor@jp_sela"
     - fallback_segmentor
   translators:
     - "lua_translator@*date_translator"
@@ -193,39 +60,13 @@ engine:
     - "lua_translator@*calculator"
     - punct_translator
     - "table_translator@custom_phrase"
-    - "table_translator@custom_phrase_3_code"
-    - "table_translator@custom_phrase_kf"
-    - "table_translator@custom_phrase_mqzg"
-    - "table_translator@custom_phrase_super_1jian"
-    - "table_translator@custom_phrase_super_2jian"
-    - "table_translator@custom_phrase_super_3jian"
-    - "table_translator@custom_phrase_super_3jian_no_conflict"
-    - "table_translator@custom_phrase_super_4jian_no_conflict"
     - "table_translator@emojis"
-    - "table_translator@easy_en_simp"
-    - "table_translator@jp_sela"
-    - reverse_lookup_translator
     - "table_translator@reverse_moqima"
     - "table_translator@radical_flypy"
-    - "table_translator@reverse_stroke"
-    - "table_translator@reverse_zrlf"
-    - "table_translator@reverse_cj"
     - script_translator
-    - "script_translator@user_dict_set"
-    - "script_translator@add_user_dict"
 grammar:
   language: "zh-moqi"
   non_collocation_penalty: "-4"
-jp_sela:
-  comment_format:
-    - "xform/^.+$//"
-  dictionary: jp_sela
-  enable_completion: true
-  enable_sentence: false
-  prefix: aj
-  spelling_hints: 9
-  tag: jp_sela
-  tips: "日语"
 key_binder:
   bindings:
     - {accept: bracketleft, send: Page_Up, when: has_menu}
@@ -252,12 +93,6 @@ key_binder:
     - {accept: semicolon, send: 2, when: has_menu}
     - {accept: "Control+i", send: "Shift+Right", when: composing}
     - {accept: "Control+o", send: "Shift+Left", when: composing}
-    - {accept: "Control+p", toggle: chaifen, when: has_menu}
-    - {accept: "Control+l", toggle: chaifen_all, when: has_menu}
-    - {accept: "Control+e", toggle: chinese_english, when: has_menu}
-    - {accept: Tab, match: "[a-z]{1,3}", send_sequence: "/1"}
-    - {accept: "/", match: "[a-z]{1,3}", send_sequence: "/1"}
-    - {accept: ., match: "[a-z]{1,3}", send_sequence: "/1"}
     - {accept: "Control+1", send_sequence: "{Home}{Shift+Right}[", when: composing}
     - {accept: "Control+2", send_sequence: "{Home}{Shift+Right}{Shift+Right}[", when: composing}
     - {accept: "Control+3", send_sequence: "{Home}{Shift+Right}{Shift+Right}{Shift+Right}[", when: composing}
@@ -292,17 +127,11 @@ key_binder:
     - {accept: "Shift+Y", send_sequence: "{Shift+Right}y{Shift+Right}", when: has_menu}
     - {accept: "Shift+Z", send_sequence: "{Shift+Right}z{Shift+Right}", when: has_menu}
   import_preset: default
-long_word_filter:
-  count: 2
-  idx: 1
 lunar: anl
-mars:
-  opencc_config: martian.json
-  option_name: mars
 menu:
-  page_size: 20
+  page_size: 5
 pro_comment_format:
-  candidate_length: 4
+  candidate_length: 3
   corrector: true
   corrector_type: "{comment}"
   fuzhu_code: true
@@ -590,40 +419,21 @@ radical_flypy:
   tips: "〔部件组字〕"
 recognizer:
   patterns:
-    add_user_dict: "^ac[A-Za-z]*$"
     card_number: "^C[0-9]+"
-    easy_en_simp: "^aw[a-z]*"
     emojis: "^ae[a-z]*'?$"
     gregorian_to_lunar: "^N[0-9]{1,8}"
-    jp_sela: "^aj[a-z]*"
     number: "^R[0-9]+[.]?[0-9]*"
     punct: "^/([0-9]+|[A-Za-z]+)?$"
     radical_flypy: "^az[a-z]*'?$"
-    reverse_cj: "^arj[A-Za-z]*$"
     reverse_moqima: "^amq[A-Za-z]*$"
-    reverse_stroke: "^ab[A-Za-z]*$"
-    reverse_zrlf: "^alf[A-Za-z]*$"
     unicode: "^U[a-f0-9]+"
     uppercase: "^[A-Z].*$"
-reverse_cj:
-  dictionary: cangjie5
-  enable_completion: true
-  preedit_format:
-    - "xform/^arj/仓颉5:/"
-    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
-  prefix: arj
-  suffix: "'"
-  tag: reverse_cj
-  tips: "〔仓颉〕"
 reverse_lookup:
   dictionary: moqi_wan.extended
   overwrite_comment: true
   tags:
     - reverse_moqima
     - radical_flypy
-    - reverse_stroke
-    - reverse_zrlf
-    - reverse_cj
 reverse_moqima:
   dictionary: reverse_moqima
   enable_completion: true
@@ -631,37 +441,22 @@ reverse_moqima:
   suffix: "'"
   tag: reverse_moqima
   tips: "〔墨奇反查〕"
-reverse_stroke:
-  dictionary: stroke
-  enable_completion: true
-  preedit_format:
-    - "xlit/hspnz/一丨丿丶乙/"
-  prefix: ab
-  suffix: "'"
-  tag: reverse_stroke
-  tips: "〔筆畫hspnz〕"
-reverse_zrlf:
-  dictionary: zrlf
-  enable_completion: true
-  prefix: alf
-  suffix: "'"
-  tag: reverse_zrlf
-  tips: "〔自然兩分〕"
 schema:
   author:
     - gaboolic
   dependencies:
     - reverse_moqima
     - radical_flypy
-    - stroke
     - emoji
-    - easy_en
   description: |
-    墨奇辅助码 小鹤双拼版 大词库版本 非自动上屏，支持4万字 https://github.com/gaboolic/rime-shuangpin-fuzhuma/wiki/%E5%A2%A8%E5%A5%87%E7%A0%81%E6%8B%86%E5%88%86%E8%A7%84%E5%88%99
+    墨奇辅助码 小鹤双拼版 大词库版本 非自动上屏，支持4万字
+    Lite 精简版：仅保留 拼音+墨奇辅助码 两列编码，词库按日常/IT/地理/诗词/长词裁剪，
+    去掉了围棋/药名/菜名等细胞词库、超级简码、英文方案、拆字/火星文等未使用组件。
+    https://github.com/gaboolic/rime-shuangpin-fuzhuma/wiki/%E5%A2%A8%E5%A5%87%E7%A0%81%E6%8B%86%E5%88%86%E8%A7%84%E5%88%99
 
-  name: "⚡ 惊鸿·游龙"
+  name: "⚡ 惊鸿·游龙 Lite"
   schema_id: moqi_wan_flypymo
-  version: "2024-05-11"
+  version: "2026-10-22"
 speller:
   algebra:
     - "derive/^([jqxy])u(;.*)$/$1v$2/"
@@ -726,11 +521,6 @@ switches:
   - name: emoji
     reset: 1
     states: ["💀", "😄"]
-  - name: chaifen
-    states: ["不拆", "扌斥"]
-  - name: mars
-    reset: 0
-    states: ["地", "煋"]
   - name: ascii_punct
     states: ["。，", "．，"]
 traditionalize:
@@ -743,7 +533,7 @@ traditionalize:
   tips: none
 translator:
   comment_format:
-    {}
+    {comment}
   contextual_suggestions: true
   dictionary: moqi_wan.extended
   enable_completion: false
@@ -754,15 +544,3 @@ translator:
   max_sentences: 3
   prism: moqi_wan_flypymo
   spelling_hints: 10
-user_dict_set:
-  comment_format:
-    - "xform/(^|[ '])[^[]+[[]/$1/"
-  db_class: tabledb
-  dictionary: moqi_wan.extended
-  enable_completion: false
-  enable_sentence: false
-  enable_user_dict: true
-  initial_quality: 0
-  prism: moqi_wan_flypymo
-  spelling_hints: 1
-  user_dict: user.custom.dict
