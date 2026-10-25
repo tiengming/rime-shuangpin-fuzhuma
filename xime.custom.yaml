@@ -4,8 +4,9 @@ metadata:
   platform: android
   config_version: 1
   generator: "Xime Config Generator"
-  modified_time: "2026-10-01"
+  modified_time: "2026-10-25"
 
+# 市场索引：第一个地址为自建加速镜像，保留在最前
 xime_index:
   base_urls:
     - "https://xime.wuhx.ccwu.cc/"
@@ -15,124 +16,311 @@ xime_index:
     - "https://raw.githubusercontent.com/ximeiorg/xime-index/refs/heads/main/"
 
 style:
-  color_scheme: starry_night_voyage
+  color_scheme: material_violet
 
-# ══════════════════════════════════════════════════════════
-#  五套主题配色
-#  1. 星野夜航（当前使用，保持原样）
-#  2. Notion 极简
-#  3. Claude 暖砂
-#  4. Apple 原生
-#  5. Material You 动态
-# ══════════════════════════════════════════════════════════
 color_schemes:
-  # ── 1. 星野夜航 ──
-  starry_night_voyage:
-    name: "星野夜航"
-    primary_color: 0x6D5BD0
-    keyboard_background:
-      type: gradient
-      colors: [0xF0EEFB, 0xE3DFF7]
-      colors_dark: [0x0F0C1E, 0x191430]
-      angle: 135
-    key_bg_color: 0xFAF9FF
-    key_bg_color_dark: 0x27FFFFFF
-    key_text_color: 0x38305E
-    key_text_color_dark: 0xE3DEF7
-    candidate_text_color: 0x38305E
-    candidate_text_color_dark: 0xE3DEF7
-
-  # ── 2. Notion 极简 ──
-  # 设计参考：Notion 的暖白背景 + 深墨文字 + Notion 蓝强调色
-  notion_style:
-    name: "Notion 极简"
-    primary_color: 0x2383E2
-    keyboard_background:
-      type: gradient
-      colors: [0xF7F7F5, 0xEFEFED]
-      colors_dark: [0x191919, 0x202020]
-      angle: 135
-    key_bg_color: 0xFFFFFF
-    key_bg_color_dark: 0x2F2F2F
-    key_text_color: 0x37352F
-    key_text_color_dark: 0xE9E9E7
-    candidate_text_color: 0x37352F
-    candidate_text_color_dark: 0xE9E9E7
-
-  # ── 3. Claude 暖砂 ──
-  # 设计参考：Claude 官网的奶油底色 + 赤陶色强调 + 暖灰文字
-  claude_style:
-    name: "Claude 暖砂"
-    primary_color: 0xD97757
-    keyboard_background:
-      type: gradient
-      colors: [0xF5F4EF, 0xEAE8E0]
-      colors_dark: [0x1F1E1D, 0x272624]
-      angle: 135
-    key_bg_color: 0xFFFFFF
-    key_bg_color_dark: 0x33322F
-    key_text_color: 0x3D3D3A
-    key_text_color_dark: 0xF5F4EF
-    candidate_text_color: 0x3D3D3A
-    candidate_text_color_dark: 0xF5F4EF
-
-  # ── 4. Apple 原生 ──
-  # 设计参考：iOS 系统键盘的浅灰底 + 纯白按键 + 系统蓝强调
-  apple_style:
-    name: "Apple 原生"
-    primary_color: 0x007AFF
-    keyboard_background:
-      type: gradient
-      colors: [0xD4D6DC, 0xC7CAD2]
-      colors_dark: [0x1C1C1E, 0x121214]
-      angle: 135
-    key_bg_color: 0xFFFFFF
-    key_bg_color_dark: 0x363638
-    key_text_color: 0x000000
-    key_text_color_dark: 0xFFFFFF
-    candidate_text_color: 0x000000
-    candidate_text_color_dark: 0xFFFFFF
-
-  # ── 5. Material You 动态 ──
-  # 设计参考：Material Design 3 基准调色板（紫罗兰），自动适配系统亮/暗模式
-  material_you:
-    name: "Material 动态"
+  # ── Material You 家族（M3 色调结构，浅 primary≈L48 / 深 primary≈L80） ──
+  material_violet:
+    name: "紫罗兰"
     primary_color: 0x6750A4
     keyboard_background:
       type: gradient
-      colors: [0xF3EDF7, 0xE8DEF8]
-      colors_dark: [0x1C1B1F, 0x211F26]
-      angle: 135
+      colors: [0xFEF7FF, 0xF3EDF7]
+      colors_dark: [0x141218, 0x211F26]
+      angle: 160
     key_bg_color: 0xFFFFFF
     key_bg_color_dark: 0x2B2930
     key_text_color: 0x1D1B20
     key_text_color_dark: 0xE6E1E5
     candidate_text_color: 0x1D1B20
     candidate_text_color_dark: 0xE6E1E5
+    candidate_selected_text_color: 0x6750A4
+    candidate_selected_text_color_dark: 0xD0BCFF
+
+  material_rose:
+    name: "暖玫瑰"
+    primary_color: 0x984061
+    keyboard_background:
+      type: gradient
+      colors: [0xFFF8F8, 0xF8E8EA]
+      colors_dark: [0x1F1A1C, 0x2A2225]
+      angle: 160
+    key_bg_color: 0xFFFFFF
+    key_bg_color_dark: 0x36292C
+    key_text_color: 0x201A1B
+    key_text_color_dark: 0xEFDEE4
+    candidate_text_color: 0x201A1B
+    candidate_text_color_dark: 0xEFDEE4
+    candidate_selected_text_color: 0x984061
+    candidate_selected_text_color_dark: 0xEFB8C8
+
+  material_ocean:
+    name: "海蓝"
+    primary_color: 0x006494
+    keyboard_background:
+      type: gradient
+      colors: [0xFDFBFF, 0xE7EEF8]
+      colors_dark: [0x101418, 0x1B2024]
+      angle: 160
+    key_bg_color: 0xFFFFFF
+    key_bg_color_dark: 0x2A3036
+    key_text_color: 0x191C20
+    key_text_color_dark: 0xE2E2E9
+    candidate_text_color: 0x191C20
+    candidate_text_color_dark: 0xE2E2E9
+    candidate_selected_text_color: 0x006494
+    candidate_selected_text_color_dark: 0x95CCFF
+
+  material_forest:
+    name: "松绿"
+    primary_color: 0x2F6B4F
+    keyboard_background:
+      type: gradient
+      colors: [0xF7FBF5, 0xE6F0E4]
+      colors_dark: [0x121613, 0x1B211D]
+      angle: 160
+    key_bg_color: 0xFFFFFF
+    key_bg_color_dark: 0x27302A
+    key_text_color: 0x1A201B
+    key_text_color_dark: 0xDFE6DF
+    candidate_text_color: 0x1A201B
+    candidate_text_color_dark: 0xDFE6DF
+    candidate_selected_text_color: 0x2F6B4F
+    candidate_selected_text_color_dark: 0x9FD5B5
+
+
+  # ── 渐变家族（3 断点渐变 + 玻璃拟态半透明按键） ──
+  gradient_aurora:
+    name: "极光梦境"
+    primary_color: 0x5E4FD1
+    keyboard_background:
+      type: gradient
+      colors: [0x9FD8F0, 0xB4A8F5, 0x8EE8D8]
+      colors_dark: [0x1A1B3A, 0x2D2A6E, 0x0E5C55]
+      angle: 160
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x2EFFFFFF
+    key_text_color: 0x1F2A44
+    key_text_color_dark: 0xE6F2FF
+    candidate_text_color: 0x1F2A44
+    candidate_text_color_dark: 0xE6F2FF
+    candidate_selected_text_color: 0x4A3CBE
+    candidate_selected_text_color_dark: 0x8FF0DC
+
+  gradient_sunset:
+    name: "暮霞"
+    primary_color: 0xC2447A
+    keyboard_background:
+      type: gradient
+      colors: [0xFFD9A6, 0xFFA9A8, 0xE58CC9]
+      colors_dark: [0x3A1C3F, 0x7A2E5B, 0x2B1F4E]
+      angle: 160
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x30FFFFFF
+    key_text_color: 0x4A2030
+    key_text_color_dark: 0xFFE9E2
+    candidate_text_color: 0x4A2030
+    candidate_text_color_dark: 0xFFE9E2
+    candidate_selected_text_color: 0xB03A6E
+    candidate_selected_text_color_dark: 0xFF9FB8
+
+  gradient_mint:
+    name: "青提薄荷"
+    primary_color: 0x0E9F6E
+    keyboard_background:
+      type: gradient
+      colors: [0xB9F3D4, 0x8DE3C7, 0xD6F5EF]
+      colors_dark: [0x0B3D2E, 0x14532D, 0x0F2F3D]
+      angle: 160
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x2BFFFFFF
+    key_text_color: 0x0F3A2E
+    key_text_color_dark: 0xDFF8EC
+    candidate_text_color: 0x0F3A2E
+    candidate_text_color_dark: 0xDFF8EC
+    candidate_selected_text_color: 0x0B8A5F
+    candidate_selected_text_color_dark: 0x6EE7B7
+
+  gradient_sakura:
+    name: "樱粉雪"
+    primary_color: 0xE0568C
+    keyboard_background:
+      type: gradient
+      colors: [0xFFE3EC, 0xFFC7D9, 0xE8F4FF]
+      colors_dark: [0x35243A, 0x50254E, 0x27335F]
+      angle: 160
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x30FFFFFF
+    key_text_color: 0x4A2338
+    key_text_color_dark: 0xFFE7F0
+    candidate_text_color: 0x4A2338
+    candidate_text_color_dark: 0xFFE7F0
+    candidate_selected_text_color: 0xC74A7C
+    candidate_selected_text_color_dark: 0xFF9EC4
+
+  gradient_ocean:
+    name: "深海"
+    primary_color: 0x0E7490
+    keyboard_background:
+      type: gradient
+      colors: [0x2193B0, 0x4FB3D9, 0x8FE3F5]
+      colors_dark: [0x0F2027, 0x203A43, 0x2C5364]
+      angle: 160
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x2BFFFFFF
+    key_text_color: 0x0E2A3A
+    key_text_color_dark: 0xD9F2FB
+    candidate_text_color: 0x0E2A3A
+    candidate_text_color_dark: 0xD9F2FB
+    candidate_selected_text_color: 0x0C647C
+    candidate_selected_text_color_dark: 0x67E8F9
+
+
+  # ── 图片背景家族（背景图为 PIL 程序化原创生成，见 NOTICE.md） ──
+  image_galaxy:
+    name: "银河漫游"
+    primary_color: 0x7C6BD9
+    keyboard_background:
+      type: image
+      src: "themes/starry_night.jpg"
+      fit: cover
+      overlay_alpha: 0.10
+      overlay_alpha_dark: 0.22
+    key_bg_color: 0x8CFFFFFF
+    key_bg_color_dark: 0x40FFFFFF
+    key_text_color: 0x232323
+    key_text_color_dark: 0xF2F2F2
+    candidate_text_color: 0xF2F2F2
+    candidate_text_color_dark: 0xF2F2F2
+    candidate_selected_text_color: 0xC7B8FF
+    candidate_selected_text_color_dark: 0xC7B8FF
+
+  image_mist:
+    name: "晨雾云海"
+    primary_color: 0x3E6FA8
+    keyboard_background:
+      type: image
+      src: "themes/dawn_mist.jpg"
+      src_dark: "themes/dusk_glow.jpg"
+      fit: cover
+      overlay_alpha: 0.12
+      overlay_alpha_dark: 0.28
+    key_bg_color: 0xA6FFFFFF
+    key_bg_color_dark: 0x2EFFFFFF
+    key_text_color: 0x2A3548
+    key_text_color_dark: 0xF2F4F8
+    candidate_text_color: 0x2A3548
+    candidate_text_color_dark: 0xF2F4F8
+    candidate_selected_text_color: 0x3E6FA8
+    candidate_selected_text_color_dark: 0xBBD6F2
+
+  image_mountains:
+    name: "远山拾光"
+    primary_color: 0x3E7A5E
+    keyboard_background:
+      type: image
+      src: "themes/mountains_day.jpg"
+      src_dark: "themes/mountains_night.jpg"
+      fit: cover
+      overlay_alpha: 0.10
+      overlay_alpha_dark: 0.25
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x38FFFFFF
+    key_text_color: 0x1F3340
+    key_text_color_dark: 0xF0F4F2
+    candidate_text_color: 0x1F3340
+    candidate_text_color_dark: 0xF0F4F2
+    candidate_selected_text_color: 0x2F6B4F
+    candidate_selected_text_color_dark: 0x9FD5B5
+
+  image_sakura:
+    name: "樱吹雪"
+    primary_color: 0xE0568C
+    keyboard_background:
+      type: image
+      src: "themes/sakura_day.jpg"
+      src_dark: "themes/sakura_night.jpg"
+      fit: cover
+      overlay_alpha: 0.10
+      overlay_alpha_dark: 0.26
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x33FFFFFF
+    key_text_color: 0x4A2338
+    key_text_color_dark: 0xF7E9F0
+    candidate_text_color: 0x4A2338
+    candidate_text_color_dark: 0xF7E9F0
+    candidate_selected_text_color: 0xC74A7C
+    candidate_selected_text_color_dark: 0xFF9EC4
+
+  image_moonlit:
+    name: "星月童话"
+    primary_color: 0xD9A441
+    keyboard_background:
+      type: image
+      src: "themes/moonlit.jpg"
+      fit: cover
+      overlay_alpha: 0.12
+      overlay_alpha_dark: 0.25
+    key_bg_color: 0x8CFFFFFF
+    key_bg_color_dark: 0x40FFFFFF
+    key_text_color: 0x232323
+    key_text_color_dark: 0xF2F2F2
+    candidate_text_color: 0xF5F1E8
+    candidate_text_color_dark: 0xF5F1E8
+    candidate_selected_text_color: 0xFFD98E
+    candidate_selected_text_color_dark: 0xFFD98E
+
+  image_sea:
+    name: "落日海平线"
+    primary_color: 0xE07840
+    keyboard_background:
+      type: image
+      src: "themes/sea_sunset.jpg"
+      src_dark: "themes/sea_night.jpg"
+      fit: cover
+      overlay_alpha: 0.10
+      overlay_alpha_dark: 0.24
+    key_bg_color: 0x99FFFFFF
+    key_bg_color_dark: 0x33FFFFFF
+    key_text_color: 0x3A2A24
+    key_text_color_dark: 0xF2F2F2
+    candidate_text_color: 0x3A2A24
+    candidate_text_color_dark: 0xF2F2F2
+    candidate_selected_text_color: 0x9C4A1E
+    candidate_selected_text_color_dark: 0xFFB37C
 
 keyboard:
+  # 全局兜底颜色（color_schemes 未覆盖字段回退到这里，取 M3 紫罗兰表面色阶）
   colors:
-    keyboard_bg_color: 0xE3E4E8
-    keyboard_bg_color_dark: 0x202020
+    keyboard_bg_color: 0xF3EDF7
+    keyboard_bg_color_dark: 0x211F26
     key_bg_color: 0xFFFFFF
-    key_bg_color_dark: 0x4A4A4A
-    candidate_bar_bg_color: 0xE3E4E8
-    candidate_bar_bg_color_dark: 0x202020
-    key_text_color: 0x202124
-    key_text_color_dark: 0xE8EAED
-    candidate_text_color: 0x202124
-    candidate_text_color_dark: 0xE8EAED
+    key_bg_color_dark: 0x2B2930
+    candidate_bar_bg_color: 0xF3EDF7
+    candidate_bar_bg_color_dark: 0x211F26
+    key_text_color: 0x1D1B20
+    key_text_color_dark: 0xE6E1E5
+    candidate_text_color: 0x1D1B20
+    candidate_text_color_dark: 0xE6E1E5
 
   key:
-    corner_radius: 8
+    corner_radius: 14
 
+  # 玻璃拟态半透明键面下应用投影轮廓与 14dp 圆角不匹配（四角残影），故关闭
   shadow:
-    enabled: true
-    elevation: 2
+    enabled: false
 
-  # ══════════════ 中文 26 键（小鹤双拼 · 适配墨奇）══════════════
+  # 字体文件随本仓库 fonts/ 目录，部署（整目录覆盖到 rime/）后即位于 rime/fonts/
+  fonts:
+    # 键面主字：Maple Mono NL CN Regular（圆角等宽、含 CJK、无连字）
+    # 候选/注释：霞鹜文楷 Regular；字根/标签保留内置 ChaiPUA
+    key_font: "fonts/maple_mono_nl_cn_regular.ttf"
+    candidate_font: "fonts/lxgw_wenkai_regular.ttf"
+    comment_font: "fonts/lxgw_wenkai_regular.ttf"
+
+  # ══════════════ 中文 26 键（小鹤双拼 · 适配墨奇，已清除键面韵母/字根提示）══════════════
   qwerty:
-    button_layout: compact
+    button_layout: standard
     layout:
       rows:
         - ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
@@ -153,41 +341,41 @@ keyboard:
       "9": { tap: "9", swipe_down: "(" }
       "0": { tap: "0", swipe_down: ")" }
 
-      # ── 第一行：上滑常用中文标点（成对符号只显示左半）/ 下滑小鹤韵母提示 ──
-      q: { tap: "q", swipe_up: { label: "“", action: commit, value: "“”" }, swipe_down: { label: "iu", action: "none", display: "key" }, long_press: { display: "bubble", values: ["q", "Q"] } }
-      w: { tap: "w", swipe_up: { label: "‘", action: commit, value: "‘’" }, swipe_down: { label: "ei", action: "none", display: "key" }, long_press: { display: "bubble", values: ["w", "W"] } }
-      e: { tap: "e", swipe_up: { label: "（", action: commit, value: "（）" }, swipe_down: { label: "e", action: "none", display: "key" }, long_press: { display: "bubble", values: ["e", "E"] } }
-      r: { tap: "r", swipe_up: { label: "【", action: commit, value: "【】" }, swipe_down: { label: "uan", action: "none", display: "key" }, long_press: { display: "bubble", values: ["r", "R"] } }
-      t: { tap: "t", swipe_up: { label: "《", action: commit, value: "《》" }, swipe_down: { label: "ue\nve", action: "none", display: "key" }, long_press: { display: "bubble", values: ["t", "T"] } }
-      y: { tap: "y", swipe_up: { label: "：", action: commit, value: "：" }, swipe_down: { label: "un", action: "none", display: "key" }, long_press: { display: "bubble", values: ["y", "Y"] } }
-      u: { tap: "u", swipe_up: { label: "、", action: commit, value: "、" }, swipe_down: { label: "sh\nu", action: "none", display: "key" }, long_press: { display: "bubble", values: ["u", "U", "×", "÷", "≠", "≈", "±", "°", "‰", "√"] } }
-      i: { tap: "i", swipe_up: { label: "？", action: commit, value: "？" }, swipe_down: { label: "ch\ni", action: "none", display: "key" }, long_press: { display: "bubble", values: ["i", "I"] } }
-      o: { tap: "o", swipe_up: { label: "！", action: commit, value: "！" }, swipe_down: { label: "o\nuo", action: "none", display: "key" }, long_press: { display: "bubble", values: ["o", "O"] } }
-      p: { tap: "p", swipe_up: { label: "/", action: send_rime, value: "/" }, swipe_down: { label: "ie", action: "none", display: "key" }, long_press: { display: "bubble", values: ["p", "P"] } }
+      # ── 第一行：上滑常用中文标点（成对符号只显示左半）──
+      q: { tap: "q", swipe_up: { label: "“", action: commit, value: "“”" }, long_press: { display: "bubble", values: ["q", "Q"] } }
+      w: { tap: "w", swipe_up: { label: "‘", action: commit, value: "‘’" }, long_press: { display: "bubble", values: ["w", "W"] } }
+      e: { tap: "e", swipe_up: { label: "（", action: commit, value: "（）" }, long_press: { display: "bubble", values: ["e", "E"] } }
+      r: { tap: "r", swipe_up: { label: "【", action: commit, value: "【】" }, long_press: { display: "bubble", values: ["r", "R"] } }
+      t: { tap: "t", swipe_up: { label: "《", action: commit, value: "《》" }, long_press: { display: "bubble", values: ["t", "T"] } }
+      y: { tap: "y", swipe_up: { label: "：", action: commit, value: "：" }, long_press: { display: "bubble", values: ["y", "Y"] } }
+      u: { tap: "u", swipe_up: { label: "、", action: commit, value: "、" }, long_press: { display: "bubble", values: ["u", "U", "×", "÷", "≠", "≈", "±", "°", "‰", "√"] } }
+      i: { tap: "i", swipe_up: { label: "？", action: commit, value: "？" }, long_press: { display: "bubble", values: ["i", "I"] } }
+      o: { tap: "o", swipe_up: { label: "！", action: commit, value: "！" }, long_press: { display: "bubble", values: ["o", "O"] } }
+      p: { tap: "p", swipe_up: { label: "/", action: send_rime, value: "/" }, long_press: { display: "bubble", values: ["p", "P"] } }
 
-      # ── 第二行：上滑常用符号（与第一行不重复）/ 下滑小鹤韵母提示 ──
-      a: { tap: "a", swipe_up: { label: "@", action: commit, value: "@" }, swipe_down: { label: "a", action: "none", display: "key" }, long_press: { display: "bubble", values: ["a", "A"] } }
-      s: { tap: "s", swipe_up: { label: "#", action: commit, value: "#" }, swipe_down: { label: "iong\nong", action: "none", display: "key" }, long_press: { display: "bubble", values: ["s", "S"] } }
-      d: { tap: "d", swipe_up: { label: "¥", action: commit, value: "¥" }, swipe_down: { label: "ai", action: "none", display: "key" }, long_press: { display: "bubble", values: ["d", "D"] } }
-      f: { tap: "f", swipe_up: { label: "；", action: commit, value: "；" }, swipe_down: { label: "en", action: "none", display: "key" }, long_press: { display: "bubble", values: ["f", "F"] } }
-      g: { tap: "g", swipe_up: { label: "…", action: commit, value: "…" }, swipe_down: { label: "eng", action: "none", display: "key" }, long_press: { display: "bubble", values: ["g", "G"] } }
-      h: { tap: "h", swipe_up: { label: "—", action: commit, value: "—" }, swipe_down: { label: "ang", action: "none", display: "key" }, long_press: { display: "bubble", values: ["h", "H"] } }
-      j: { tap: "j", swipe_up: { label: "～", action: commit, value: "～" }, swipe_down: { label: "an", action: "none", display: "key" }, long_press: { display: "bubble", values: ["j", "J"] } }
-      k: { tap: "k", swipe_up: { label: "%", action: commit, value: "%" }, swipe_down: { label: "ing\nuai", action: "none", display: "key" }, long_press: { display: "bubble", values: ["k", "K"] } }
-      l: { tap: "l", swipe_up: { label: "·", action: commit, value: "·" }, swipe_down: { label: "iang\nuang", action: "none", display: "key" }, long_press: { display: "bubble", values: ["l", "L"] } }
+      # ── 第二行：上滑常用符号（与第一行不重复）──
+      a: { tap: "a", swipe_up: { label: "@", action: commit, value: "@" }, long_press: { display: "bubble", values: ["a", "A"] } }
+      s: { tap: "s", swipe_up: { label: "#", action: commit, value: "#" }, long_press: { display: "bubble", values: ["s", "S"] } }
+      d: { tap: "d", swipe_up: { label: "¥", action: commit, value: "¥" }, long_press: { display: "bubble", values: ["d", "D"] } }
+      f: { tap: "f", swipe_up: { label: "；", action: commit, value: "；" }, long_press: { display: "bubble", values: ["f", "F"] } }
+      g: { tap: "g", swipe_up: { label: "…", action: commit, value: "…" }, long_press: { display: "bubble", values: ["g", "G"] } }
+      h: { tap: "h", swipe_up: { label: "—", action: commit, value: "—" }, long_press: { display: "bubble", values: ["h", "H"] } }
+      j: { tap: "j", swipe_up: { label: "～", action: commit, value: "～" }, long_press: { display: "bubble", values: ["j", "J"] } }
+      k: { tap: "k", swipe_up: { label: "%", action: commit, value: "%" }, long_press: { display: "bubble", values: ["k", "K"] } }
+      l: { tap: "l", swipe_up: { label: "·", action: commit, value: "·" }, long_press: { display: "bubble", values: ["l", "L"] } }
 
-      # ── 第三行：上滑补充符号 / 下滑小鹤声母·韵母提示 ──
-      z: { tap: "z", swipe_up: { label: "*", action: commit, value: "*" }, swipe_down: { label: "ou", action: "none", display: "key" }, long_press: { display: "bubble", values: ["z", "Z"] } }
-      x: { tap: "x", swipe_up: { label: "&", action: commit, value: "&" }, swipe_down: { label: "ia\nua", action: "none", display: "key" }, long_press: { display: "bubble", values: ["x", "X"] } }
-      c: { tap: "c", swipe_up: { label: "_", action: commit, value: "_" }, swipe_down: { label: "ao", action: "none", display: "key" }, long_press: { display: "bubble", values: ["c", "C"] } }
-      v: { tap: "v", swipe_up: { label: "+", action: commit, value: "+" }, swipe_down: { label: "zh\nui\nv", action: "none", display: "key" }, long_press: { display: "bubble", values: ["v", "V"] } }
-      b: { tap: "b", swipe_up: { label: "=", action: commit, value: "=" }, swipe_down: { label: "in", action: "none", display: "key" }, long_press: { display: "bubble", values: ["b", "B"] } }
-      n: { tap: "n", swipe_up: { label: "|", action: commit, value: "|" }, swipe_down: { label: "iao", action: "none", display: "key" }, long_press: { display: "bubble", values: ["n", "N"] } }
-      m: { tap: "m", swipe_up: { label: "\\", action: commit, value: "\\" }, swipe_down: { label: "ian", action: "none", display: "key" }, long_press: { display: "bubble", values: ["m", "M"] } }
+      # ── 第三行：上滑补充符号 ──
+      z: { tap: "z", swipe_up: { label: "*", action: commit, value: "*" }, long_press: { display: "bubble", values: ["z", "Z"] } }
+      x: { tap: "x", swipe_up: { label: "&", action: commit, value: "&" }, long_press: { display: "bubble", values: ["x", "X"] } }
+      c: { tap: "c", swipe_up: { label: "_", action: commit, value: "_" }, long_press: { display: "bubble", values: ["c", "C"] } }
+      v: { tap: "v", swipe_up: { label: "+", action: commit, value: "+" }, long_press: { display: "bubble", values: ["v", "V"] } }
+      b: { tap: "b", swipe_up: { label: "=", action: commit, value: "=" }, long_press: { display: "bubble", values: ["b", "B"] } }
+      n: { tap: "n", swipe_up: { label: "|", action: commit, value: "|" }, long_press: { display: "bubble", values: ["n", "N"] } }
+      m: { tap: "m", swipe_up: { label: "\\", action: commit, value: "\\" }, long_press: { display: "bubble", values: ["m", "M"] } }
 
-      # ── 第四行：功能键 ──
+      # ── 第四行：功能键（delete 长按连续删除为内置行为，按文档统一 values 写法）──
       shift: { width: 1.4, tap: { action: command, value: shift_single }, double_tap: { action: command, value: shift_caps } }
-      delete: { width: 1.4, tap: { action: delete }, long_press: { values: [ { action: delete, repeat: true } ] }, swipe_up: { action: clear_all, label: "上滑清空" }, swipe_down: { action: undo_clear, label: "下滑撤回" } }
+      delete: { width: 1.4, tap: { action: delete }, long_press: { values: [ { action: delete } ] }, swipe_up: { action: clear_all, label: "上滑清空" }, swipe_down: { action: undo_clear, label: "下滑撤回" } }
       mode_change: { width: 1.2, tap: { action: command, value: mode_change }, long_press: { display: bubble, values: [ { label: number, action: command, value: mode_change_number }, { label: common_symbol, action: command, value: mode_change_common_symbol } ] } }
       space: { width: 3, tap: { action: space }, long_press: { values: [ { action: voice } ] } }
       enter: { width: 1.2, tap: { action: enter } }
@@ -240,7 +428,7 @@ keyboard:
       k: { tap: "k", swipe_up: ",", long_press: { display: "bubble", values: ["k", "K"] } }
       l: { tap: "l", swipe_up: ".", long_press: { display: "bubble", values: ["l", "L"] } }
 
-      # ── 第三行：下滑编辑快捷键，标签用英文缩写或符号 ──
+      # ── 第三行：下滑编辑快捷键 ──
       z: { tap: "z", swipe_down: { label: "↶", action: undo, display: "key" }, long_press: { display: "bubble", values: ["z", "Z"] } }
       x: { tap: "x", swipe_down: { label: "✂", action: cut, display: "key" }, long_press: { display: "bubble", values: ["x", "X"] } }
       c: { tap: "c", swipe_down: { label: "⧉", action: copy, display: "key" }, long_press: { display: "bubble", values: ["c", "C"] } }
@@ -251,7 +439,7 @@ keyboard:
 
       # ── 第四行：功能键 ──
       shift: { width: 1.4, tap: { action: command, value: shift_single }, double_tap: { action: command, value: shift_caps } }
-      delete: { width: 1.4, tap: { action: delete }, long_press: { values: [ { action: delete, repeat: true } ] }, swipe_up: { action: clear_all, label: "上滑清空" }, swipe_down: { action: undo_clear, label: "下滑撤回" } }
+      delete: { width: 1.4, tap: { action: delete }, long_press: { values: [ { action: delete } ] }, swipe_up: { action: clear_all, label: "上滑清空" }, swipe_down: { action: undo_clear, label: "下滑撤回" } }
       mode_change: { width: 1.2, tap: { action: command, value: mode_change }, long_press: { display: bubble, values: [ { label: number, action: command, value: mode_change_number }, { label: common_symbol, action: command, value: mode_change_common_symbol } ] } }
       space: { width: 3, tap: { action: space }, long_press: { values: [ { action: voice } ] } }
       enter: { width: 1.2, tap: { action: enter } }
